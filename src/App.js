@@ -15,7 +15,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          CUEx is the worse
+          CUExxxxxxxxxxxsdsssdsdddsd
         </a>
       </header>
     </div>
