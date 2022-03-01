@@ -1,13 +1,7 @@
-import logo from './images/logo.svg';
-import './App.css';
-//Below import login page
-import './containers/login/Login.js'
-
-function App() {
+const LoginPage = () => {
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
@@ -17,11 +11,11 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          CUExxxxxxxxxxxsdsssdsdddsd
+          Login Page
         </a>
       </header>
     </div>
   );
 }
 
-export default App;
+export default LoginPage;
