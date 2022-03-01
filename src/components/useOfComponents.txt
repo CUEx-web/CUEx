@@ -1,0 +1,1 @@
+This directory is for storing reuseable components. We do not need to implement the same component again. We just need to import from this directory and input some parameters.
