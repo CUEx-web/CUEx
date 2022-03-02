@@ -1,0 +1,18 @@
+GET http://localhost:3000/users
+
+###
+
+GET http://localhost:3000/users/6217c53d4ff436151acda868
+
+###
+
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+    "userName": "Test123"
+}
+
+###
+
+DELETE http://localhost:3000/users/6217c53d4ff436151acda868

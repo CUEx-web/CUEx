@@ -1,0 +1,27 @@
+{
+  "name": "cuex-backend",
+  "version": "1.0.0",
+  "description": "Backend for CUEx",
+  "main": "index.js",
+  "scripts": {
+    "devStart": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CUEx-web/CUEx-backend.git"
+  },
+  "author": "CUEx Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CUEx-web/CUEx-backend/issues"
+  },
+  "homepage": "https://github.com/CUEx-web/CUEx-backend#readme",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongoose": "^6.2.3"
+  },
+  "devDependencies": {
+    "dotenv": "^16.0.0",
+    "nodemon": "^2.0.15"
+  }
+}
