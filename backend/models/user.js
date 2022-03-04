@@ -11,15 +11,44 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: true
     },
-    // userType: {
-    //     type: String,
-    //     required: true
-    // },
-    // studentId: {
-    //     type: String,
-    //     required: false
-    // },
-    registionDate: {
+    userType: {
+        type: String,
+        required: true
+    },
+    studentId: {
+        type: String,
+        required: false
+    },
+    password: {
+        type: String,
+        required: true
+    },
+    rating: {
+        type: Number,
+        required: true,
+    },
+    profilePicture: {
+        type: String,
+        required: true,
+    },
+    productId: {
+        type: [String],
+        required: true,
+    },
+    wishList: {
+        type: [String],
+        required: true,
+    },
+    loginStatus: {
+        type: Boolean,
+        required: true,
+        default: false
+    },
+    profileDescription: {
+        type: String,
+        required: true,
+    },
+    registrationDate: {
         type: Date,
         required: true,
         default: Date.now
