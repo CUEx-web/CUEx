@@ -16,3 +16,7 @@ Content-Type: application/json
 ###
 
 DELETE http://localhost:3000/users/6217c53d4ff436151acda868
+
+###
+
+GET http://localhost:3000/products
