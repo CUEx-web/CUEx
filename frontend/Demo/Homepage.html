@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Demo login page</title>
+
+    <!--Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;900&family=Ubuntu:wght@300&display=swap"
+      rel="stylesheet"
+    />
+
+    <!--bootstrap-->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+
+    <!--Font awesome-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <!--CSS style sheet-->
+    <link rel="stylesheet" href="css/Style.css" />
+  </head>
+
+  <body>
+      
+      <!-- Nav Bar -->
+      <nav class="navbar navbar-expand-md navbar-dark">
+        <a class="navbar-brand" href="">
+            <img class="logo" src="images/logo.png"   alt="iphone-mockup"><h1> CUEX, A shppingmall for you.</h1></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo03"
+          aria-controls="navbarTogglerDemo03"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="Login.html "><i class="fa-solid fa-arrow-right-to-bracket"></i>Login</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=""> <i class="fa-solid fa-user-large"></i> Profile</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href=""> <i class="fa-solid fa-envelope"></i> Contact Us</a>
+            </li>
+            
+          </ul>
+        </div>
+      </nav>
+      <!--Describtion-->
+      <div class="describtion">
+        <div class="About-Us">
+          <h1>About CUEx</h1>
+          <p>To sustain the idea of being environmentally friendly and reuse second hand materials, we wish to provide an online platform for students to trade and therefore, we design CEUx.</p>
+        </div>
+      </div>
+      <!--Search bar-->
+      <nav class="navbar navbar-expand-md navbar-dark search-bar">
+        <a class="navbar-brand" href="">
+            <div class="input-group input-group-sm mb-3 ">
+                <div class="input-group-prepend">
+                  <button class="btn btn-outline-secondary dropdown-toggle dropdown-button btn-info " type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Search</button>
+                  
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">All</a>
+                    <a class="dropdown-item" href="#">Keywords</a>
+                    <a class="dropdown-item" href="#">Categories</a>
+                    
+                    <div role="separator" class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">https://www.facebook.com/</a>
+                  </div>    
+                </div>
+                <input type="text" class="form-control" aria-label="Text input with dropdown button"  placeholder="Search with your keywords">
+              </div>
+      </nav>
+      <!--Products-->
+      <div id="product-carousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="card-group">
+              <div class="card">
+              <div class="card-header">
+            <h3>Product 1</h3>
+              </div>
+              <div class="card-body"> 
+                
+            <img class="products-img" src="images/logo.png"   alt="iphone-mockup"><h2> A book.</h2></a>
+            <button class="btn btn-lg btn-block  btn-dark" type="button">Details</button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+            <h3>Product2</h3>
+              </div>
+              
+              <div class="card-body">
+                 
+            <img class="products-img" src="images\a sheet.jpeg"   alt="iphone-mockup"><h2> A Sheet.</h2></a>
+            <button class="btn btn-lg btn-block btn-outline-dark " type="button">Details</button>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header">
+                   <h3>Product 3</h3>
+              </div>
+              
+              <div class="card-body">
+                   
+            <img class="products-img" src="images\waterbottle.jpg"   alt="iphone-mockup"><h2> A waterbottle.</h2></a>
+            <button class="btn btn-lg btn-block btn-outline-dark " type="button">Details</button>
+              </div>
+            </div>
+            </div>
+          </div>
+          <div class="carousel-item">     
+            <div class="card-group">
+              <div class="card">
+                <div class="card-header">
+                     <h3>Product 4</h3>
+                </div>
+                
+                <div class="card-body">
+                     
+              <img class="products-img" src="images\waterbottle.jpg"   alt="iphone-mockup"><h2> A waterbottle.</h2></a>
+              <button class="btn btn-lg btn-block btn-outline-dark " type="button">Details</button>
+                </div>
+              </div>
+              <div class="card">
+              <div class="card-header">
+            <h3>Product 5</h3>
+              </div>
+              <div class="card-body"> 
+                
+            <img class="products-img" src="images/logo.png"   alt="iphone-mockup"><h2> A book.</h2></a>
+            <button class="btn btn-lg btn-block  btn-dark" type="button">Details</button>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+            <h3>Product6</h3>
+              </div>
+              
+              <div class="card-body">
+                 
+            <img class="products-img" src="images\a sheet.jpeg"   alt="iphone-mockup"><h2> A Sheet.</h2></a>
+            <button class="btn btn-lg btn-block btn-outline-dark " type="button">Details</button>
+              </div>
+            </div>
+            
+            </div>
+          </div>
+          
+        </div>
+        <a class="carousel-control-prev" href="#product-carousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          
+        </a>
+        <a class="carousel-control-next" href="#product-carousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          
+        </a>
+
+
+      </div>
+    
+
+
+
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  
+  </body>

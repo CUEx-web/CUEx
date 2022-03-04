@@ -1,0 +1,138 @@
+/* Structure Part */
+body{
+    background-color:#00C897;
+}
+
+h1{
+    font-family: "Montserrat";
+    font-weight:900;
+    font-size: 1.5rem;
+    line-height: 1.5;
+    
+}
+p{
+    font-family: "Montserrat";
+    font-weight:600;
+}
+li{
+    font-family:"Ubuntu";
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/*Navigation Bar*/
+.logo{
+    width:20%;
+    border-radius: 50%;
+    margin-left: 50px;
+}
+.navbar{
+    padding-bottom: 2rem;
+    background-color: #019267;
+    height:250px;
+}
+
+.navbar-brand{
+    font-family:"Ubuntu";
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+.nav-item{
+    padding:0 18px;
+}
+.nav-link{
+    font-size: 1.2rem;
+    font-family: "Montserrat";
+    font-weight:100;
+}
+
+/*             CUEX Describtion            */
+.describtion{
+    text-align:left;
+    width:800px;
+    margin: auto;
+    background-color: antiquewhite;
+    margin-top:10px;
+    
+}
+
+/*              Search Bar                 */
+.input-group{
+    width: 1300px;
+    margin:auto;
+    
+}
+.search-bar{
+    height: 100px;
+    
+    background-color:#FFD365;
+}
+/* Products*/
+.carousel-inner{
+    margin: auto;
+}
+.card-group{
+    margin:auto;
+    background-color: black;
+}
+.card{
+    background-color: #FDFFA9;
+}
+.products-img{
+    width:100%;
+    margin-right:50px;
+    height: 600px;
+
+}
+#pricing{
+    padding: 10px;
+    text-align: center;
+}
+
+/*
+
+*************************************Login Page*******************************************
+
+
+*/
+
+.login-session{
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+}
+.login-text{
+    color: #FFF;
+    padding-top: 15px;
+   
+}
+.form-group{
+    padding-top: 5px;
+    width: 300px;
+    margin: auto;
+}
+/*
+
+*************************************Product Page****************************************
+
+*/
+.Product-describtion{
+    
+    padding-top:40px;
+}
+
+.products-image{
+    width:400px;
+    margin-right:50px;
+    height: 500px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+.product-icon{
+    margin-left: 10px;
+}
+.user-rating{
+    margin-left: 10px;
+    padding-top: 10px;
+    
+}
