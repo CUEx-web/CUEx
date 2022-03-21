@@ -1,5 +1,6 @@
 const LoginPage = () => {
-  /*Todo: Login And backend*/
+  //To-do: Need to build layout
+
   return (
     <div className="App">
       <header className="App-header">
