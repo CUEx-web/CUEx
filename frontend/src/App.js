@@ -1,25 +1,16 @@
-import logo from './images/logo.svg';
-import './App.css';
 //Below import login page
-import './containers/login/Login.js'
+import Navbar from './components/Navbar.js';
+import ExploreSection from './components/ExploreSection.js';
+import RecommendedSection from './components/RecommendedSection.js';
+import Footer from './components/Footer.js';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          CUExxxxxxxxxxxsdsssdsdddsd
-        </a>
-      </header>
+      <Navbar />
+      <ExploreSection />
+      <RecommendedSection />
+      <Footer/>
     </div>
   );
 }
