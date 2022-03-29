@@ -1,13 +1,13 @@
 const express = require("express")
-const product = require("../models/product")
+const chat = require("../models/chat")
 const router = express.Router()
-const Product = require("../models/product")
+const Chat = require("../models/chat")
 
-// Get all product
+// Get all chat
 router.get('/', async (req, res) => {
     try {
-        const products = await Product.find()
-        res.json(products)
+        const chats = await Chat.find()
+        res.json(chats)
     } catch(err) {
         res.status(500).json({ 
             message: err.message 
@@ -15,22 +15,21 @@ router.get('/', async (req, res) => {
     }
 })
 
-// Get one product
+// Get one chat
 router.get('/:id', (req, res) => {
-    //To do: return one specific product
-    res.json(res.product)
+    //To do: return one specific chat
+    res.json(res.chat)
 })
 
-// Create product
+// Create chat
 router.post('/', async(req, res) => {
-    const product = new Product({
+    const chat = new Chat({
         //To do: generate userId
-        productId: "1",
-        productName: req.body.productName
+        chatId: "1",
     })
     try {
-        const newProduct = await product.save()
-        res.status(201).json(newProduct)
+        const newChat = await chat.save()
+        res.status(201).json(newChat)
     } catch (err) {
         res.status(400).json({
             message: err.message
@@ -38,18 +37,18 @@ router.post('/', async(req, res) => {
     }
 })
 
-// Update product
+// Update chat
 router.patch('/:id', (req, res) => {
     
 })
 
-// Delete product
+// Delete chat
 router.delete('/:id', async(req, res) => {
-    //To do: delete product with specific productId
+    //To do: delete chat with specific chatId
     try {
-        await res.product.remove()
+        await res.chat.remove()
         res.json({
-            message: "Delete product:" + product.ProductName
+            message: "Delete chat:" + chat.chatId
         })
     } catch (err) {
         res.status(500).json({
@@ -58,13 +57,13 @@ router.delete('/:id', async(req, res) => {
     }
 })
 
-async function getProduct (req, res, next)  {
-    let product
+async function getChat (req, res, next)  {
+    let chat
     try {
-        product = await Product.findById(req.params.id)
-        if (product == null) {
+        chat = await chat.findById(req.params.id)
+        if (chat == null) {
             return res.status(404).json({
-                message: "Product not found"
+                message: "Chat not found"
             })
         }
     } catch (err) {
@@ -72,7 +71,7 @@ async function getProduct (req, res, next)  {
             message: err.message
         })
     }
-    res.product = product
+    res.chat = chat
     next()
 }
 

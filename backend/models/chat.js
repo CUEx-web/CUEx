@@ -6,6 +6,10 @@ const chatSchema = new mongoose.Schema({
         type: String,
         required: true
     },
+    chatId: {
+        type: String,
+        required: true
+    },
     sellerId: {
         type: String,
         required: true

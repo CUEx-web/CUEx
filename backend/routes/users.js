@@ -20,6 +20,7 @@ router.get("/:id", getUser, (req, res) => {
     //To do: return one specific user
     res.json(res.user)
 })
+
 //Create user
 router.post("/", async (req, res) => {
     const user = new User({
