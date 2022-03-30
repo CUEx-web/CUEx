@@ -35,5 +35,5 @@ app.use("/chats", chatsRouter)
 // Return 404 Not Found if no middleware handles that req
 // app.use(errorController.get404)
 
-app.listen(3000, () => console.log('Server Started'))
+app.listen(3001, () => console.log('Server Started'))
 
