@@ -8,6 +8,8 @@ const productController = require("../controllers/product")
 // Get all product
 router.get('/', productController.getAllProducts);
 
+router.get('/:productName', productController.getByProductName);
+
 // Get one product
 router.get('/:id', (req, res) => {
     //To do: return one specific product
