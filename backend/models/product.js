@@ -1,15 +1,8 @@
 const mongoose = require("mongoose")
+const Schema = mongoose.Schema;
 
 //The schema of product
-const productSchema = new mongoose.Schema({
-    productId: {
-        type: String,
-        required: true
-    },
-    amount: {
-        type: Number,
-        required: true
-    },
+const productSchema = new Schema({
     productName: {
         type: String,
         required: true
@@ -23,7 +16,7 @@ const productSchema = new mongoose.Schema({
         required: true
     },
     category: {
-        type: String,
+        type: Number,
         required: true
     },
     description: {
@@ -31,8 +24,25 @@ const productSchema = new mongoose.Schema({
         required: true
     },
     sellStatus: {
-        type: Boolean,
+        type: String,
         required: true
+    },
+    like: {
+        type: Number,
+        required: true
+    },
+    postDate: {
+        type: Date,
+        required: true,
+        default: Date.now
+    },
+    condition: {
+        type: String,
+        required: true
+    },
+    userId: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
     }
 })
 
