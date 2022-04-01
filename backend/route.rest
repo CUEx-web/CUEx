@@ -20,3 +20,23 @@ DELETE http://localhost:3000/users/6217c53d4ff436151acda868
 ###
 
 GET http://localhost:3000/products
+
+###
+
+POST http://localhost:3000/api/auth/signup
+Content-Type: application/json
+
+{
+    "userName": "Jer",
+    "email": "jer@gmail.com",
+    "password": "12345678",
+}
+
+###
+
+POST http://localhost:3000/api/auth/signin
+
+{
+    "userName": "Ken",
+    "password": "12345678"
+}

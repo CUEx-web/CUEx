@@ -3,6 +3,9 @@ const user = require("../models/user")
 const router = express.Router()
 const User = require("../models/user")
 
+const { authJwt } = require("../middlewares")
+const controller = require("../controllers/user")
+
 //Get all user
 router.get("/", async (req, res) => {
     try {
@@ -77,3 +80,14 @@ async function getUser (req, res, next)  {
 }
 
 module.exports = router
+
+// module.exports = function(app) {
+//     app.use(function(req, res, next) {
+//         res.header(
+//             "Access-Control-Allow-Headers",
+//             "Origin, Content-Type, Accept"
+//         )
+//         next()
+//     })
+    
+// }

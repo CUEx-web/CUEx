@@ -1,9 +1,12 @@
 require("dotenv").config()
 
 const express = require("express")
+const cors = require("cors")
+const cookieSession = require("cookie-session")
 const bodyParser = require("body-parser")
 const app = express()
 const mongoose = require("mongoose")
+mongoose.Promise = global.Promise
 
 // Connect to Mongodb
 mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true })
@@ -26,14 +29,29 @@ app.use("/users", usersRouter)
 const productsRouter = require("./routes/products")
 app.use("/products", productsRouter)
 
-const transactionsRouter = require("./routes/transactions")
-app.use("/transactions", transactionsRouter)
+// const transactionsRouter = require("./routes/transactions")
+// app.use("/transactions", transactionsRouter)
 
-const chatsRouter = require("./routes/chats")
-app.use("/chats", chatsRouter)
+// const chatsRouter = require("./routes/chats")
+// app.use("/chats", chatsRouter)
 
 // Return 404 Not Found if no middleware handles that req
 // app.use(errorController.get404)
+
+// Allow cross-origin resource sharing
+app.use(cors())
+// set user session data within cookie
+app.use(
+    cookieSession({
+        name: "CUEx-session",
+        // key:['key1, 'key2'],
+        secret: "COOKIE-SECRET",
+        httpOnly: true
+    })
+)
+
+require('./routes/auth')(app)
+// require('./routes/users')(app)
 
 app.listen(3000, () => console.log('Server Started'))
 
