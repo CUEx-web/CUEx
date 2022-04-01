@@ -4,7 +4,7 @@ exports.getProducts = async (req, res) => {
     console.log(req.body)
     if (req.body.productName) {
         //Return all products which their productName equals to the req.body.productName
-        Products.find( { "productName": req.body.productName } )
+        Products.find( { "productName": req.body.productName, "sellStatus": "available" } )
             .populate("userId", "_id userName")
             .then(products => {
                 // if (products.length == 0) {
@@ -20,7 +20,7 @@ exports.getProducts = async (req, res) => {
             });
     }
     if (req.body.category) {
-        Products.find( { "category": { $in: req.body.category } } )
+        Products.find( { "category": { $in: req.body.category }, "sellStatus": "available"  } )
             .populate("userId", "_id userName")
             .then(products => {
                 // if (products.length == 0) {
@@ -37,7 +37,7 @@ exports.getProducts = async (req, res) => {
     }
     if (Object.keys(req.body).length == 0) {
         //Empty body means to return all products
-        Products.find()
+        Products.find( { "sellStatus": "available" } )
             .populate("userId", "_id userName")
             .then(products => {
                 console.log(products);
