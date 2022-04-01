@@ -21,7 +21,17 @@ const errorController = require("./controllers/error")
 app.use(express.json())
 
 //Parse body
-app.use(bodyParser.urlencoded({extended: false}))
+//app.use(bodyParser.urlencoded({extended: false}))
+//Parse json inside request body
+app.use(bodyParser.json())
+
+//Avoid CORS Errors
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  next();
+})
 
 const usersRouter = require("./routes/users")
 app.use("/users", usersRouter)
@@ -53,5 +63,5 @@ app.use(
 require('./routes/auth')(app)
 // require('./routes/users')(app)
 
-app.listen(3000, () => console.log('Server Started'))
+app.listen(3001, () => console.log('Server Started'))
 

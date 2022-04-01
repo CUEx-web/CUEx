@@ -3,23 +3,10 @@ const product = require("../models/product")
 const router = express.Router()
 const Product = require("../models/product")
 
-// Get all product
-router.get('/', async (req, res) => {
-    try {
-        const products = await Product.find()
-        res.json(products)
-    } catch(err) {
-        res.status(500).json({ 
-            message: err.message 
-        })
-    }
-})
+const productController = require("../controllers/product")
 
-// Get one product
-router.get('/:id', (req, res) => {
-    //To do: return one specific product
-    res.json(res.product)
-})
+//Get all products or products by productName, category
+router.get('/', productController.getProducts);
 
 // Create product
 router.post('/', async(req, res) => {
@@ -36,12 +23,12 @@ router.post('/', async(req, res) => {
             message: err.message
         })
     }
-})
+});
 
 // Update product
-router.patch('/:id', (req, res) => {
+router.put('/:id', (req, res) => {
     
-})
+});
 
 // Delete product
 router.delete('/:id', async(req, res) => {
@@ -56,24 +43,6 @@ router.delete('/:id', async(req, res) => {
             message: err.message
         })
     }
-})
-
-async function getProduct (req, res, next)  {
-    let product
-    try {
-        product = await Product.findById(req.params.id)
-        if (product == null) {
-            return res.status(404).json({
-                message: "Product not found"
-            })
-        }
-    } catch (err) {
-        return res.status(500).json({
-            message: err.message
-        })
-    }
-    res.product = product
-    next()
-}
+});
 
 module.exports = router
