@@ -22,8 +22,47 @@ const RecommendedSection = () => {
 
   const [visible, setVisible] = useState(4);
 
-  const showMoreListingBoxes = () => {
+  const showMoreListingBoxes = async () => {
     setVisible((prevValue) => prevValue + 4 );
+    let url = "http://localhost:3001/products";
+    let method = "GET";
+    //First Example, GET all products
+    fetch(url, { method: method })
+      .then(res => {
+        if (res.status !== 200) {
+          //If there is any error, statusCode will not be 200 and will throw error
+          throw new Error('Failed to fetch products.');
+        }
+        //Return response data to the next then block
+        return res.json();
+      })
+      .then(resData => {
+        //Log the return data in the terminal, Frontend team can update things here
+        console.log(resData);
+        //console.log(resData[0]._id);
+      })
+      .catch(err => console.log(err));
+
+    //Second Example, GET products with productName = "Test"
+    // const queryParams = "?category=";
+    // const queryValue = JSON.stringify([2,6]);
+    // url = url + queryParams + queryValue;
+    // console.log(url)
+    // fetch(url, { method: method, })
+    //   .then(res => {
+    //     if (res.status !== 200) {
+    //       //If there is any error, statusCode will not be 200 and will throw error
+    //       throw new Error('Failed to fetch products.');
+    //     }
+    //     //Return response data to the next then block
+    //     return res.json();
+    //   })
+    //   .then(resData => {
+    //     //Log the return data in the terminal, Frontend team can update things here
+    //     console.log(resData);
+    //     //console.log(resData[0]._id);
+    //   })
+    //   .catch(err => console.log(err));
   };
 
   const [isEnd, viewIsEnd] = useState();
