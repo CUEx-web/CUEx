@@ -7,10 +7,10 @@ exports.getProducts = async (req, res) => {
         Products.find( { "productName": req.body.productName } )
             .populate("userId", "_id userName")
             .then(products => {
-                if (products.length == 0) {
-                    //Product with required productName not found, return 404
-                    return res.status(404).json({ message: "Products not found" });
-                }
+                // if (products.length == 0) {
+                //     //Product with required productName not found, return 404
+                //     return res.status(404).json({ message: "Products not found" });
+                // }
                 console.log(products);
                 return res.status(200).json(products);
             })
@@ -23,10 +23,10 @@ exports.getProducts = async (req, res) => {
         Products.find( { "category": { $in: req.body.category } } )
             .populate("userId", "_id userName")
             .then(products => {
-                if (products.length == 0) {
-                    //Product with required productName not found, return 404
-                    return res.status(404).json({ message: "Products not found" });
-                }
+                // if (products.length == 0) {
+                //     //Product with required productName not found, return 404
+                //     return res.status(404).json({ message: "Products not found" });
+                // }
                 console.log(products);
                 return res.status(200).json(products);
             })
