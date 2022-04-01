@@ -1,19 +1,15 @@
 const config = require("../config/authConfig")
-const db = require("../models/user")
-const User = db.User
+const User = require("../models/user")
 var jwt = require("jsonwebtoken")
 var bcrypt = require("bcryptjs")
-const user = require("../models/user")
 
-exports.signup = async function(req, res) {
-    console.log("hello world")
+exports.signup = (req, res) => {
     const password = bcrypt.hashSync(req.body.password, 8)
     const user = new User({
         userName: req.body.userName,
         email: req.body.email,
         password: password 
     })
-    console.log("hi")
     user.save((err, user) => {
         if (err) {
             res.status(500).send({ message: err })
@@ -25,25 +21,24 @@ exports.signup = async function(req, res) {
 }
 exports.signin = (req, res) => {
     User.findOne({
-        username: req.body.userName
+        userName: req.body.userName
     })
     // .populate("userType", "--v")
     .exec((err, user) => {
         if (err){
-            res.status(500).send({ message: err })
-            return
+            return res.status(500).send({ message: err })
         }
         if (!user) {
-            res.status(404).send({ message: "User not found."})
-            return
+            return res.status(404).send({ message: "User not found."})
         }
+        console.log(user)
         var passwordIsValid = bcrypt.compareSync(
             req.body.password,
             user.password
         )
+        console.log("hey")
         if (!passwordIsValid) {
-            res.status(401).send({ message: "Invalid password."})
-            return
+            return res.status(401).send({ message: "Invalid password."})
         }
         var token = jwt.sign({ id: user.id }, config.secret, {
             expiresIn: 86400

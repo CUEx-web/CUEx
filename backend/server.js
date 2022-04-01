@@ -51,7 +51,7 @@ app.use(
 )
 
 require('./routes/auth')(app)
-// require('./routes/users')(app)
+require('./routes/userAuth')(app)
 
 app.listen(3000, () => console.log('Server Started'))
 
