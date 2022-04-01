@@ -1,12 +1,9 @@
 //Model to interact with database
 const mongoose = require("mongoose")
+const Schema = mongoose.Schema;
 
 //The schema of user
-const userSchema = new mongoose.Schema({
-    userId: {
-        type: String,
-        // required: true
-    },
+const userSchema = new Schema({
     userName: {
         type: String,
         // required: true
@@ -35,14 +32,12 @@ const userSchema = new mongoose.Schema({
         type: String,
         // required: true,
     },
-    productId: {
-        type: [String],
-        // required: true,
-    },
-    wishList: {
-        type: [String],
-        // required: true,
-    },
+    productId: [
+        {
+            type: [Schema.Types.ObjectId],
+            ref: "Product"
+        }
+    ],
     loginStatus: {
         type: Boolean,
         // required: true,
