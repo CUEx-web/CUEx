@@ -5,7 +5,7 @@ Backend of CUEx
 - Follow below procedures to start developemnt:
 npm install
 Make sure you have created '.env' inside backend dir
-Run mongodb locally and insert DATABASE_URL={Your mongodb URL} into .env
+Insert your DATABASE_URL to DATABASE_URL={Your mongodb URL} into .env
 npm run devStart
 
 - Remind:
