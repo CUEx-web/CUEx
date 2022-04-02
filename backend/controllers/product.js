@@ -1,4 +1,5 @@
-const Products = require("../models/product")
+const Products = require("../models/product");
+const mongoose = require('mongoose');
 
 exports.getProducts = async (req, res) => {
     console.log(req.query)
@@ -44,4 +45,51 @@ exports.getProducts = async (req, res) => {
         //Return Error if wrong query is done
         return res.status(500).json({ message: "Call wrong api / Wrong query parameter" });
     }
+};
+
+exports.postProduct = async (req, res) => {
+    const productName = req.body.productName;
+    const price = req.body.price;
+    //Store in server images dir
+    if (req.files.productPicture.length < 1) {
+        return res.status(500).json({
+            message:  "Fail to create product",
+            error: "The image is incorrect"
+        })
+    }
+    //Replace \ with /
+    const productPicture = req.files.productPicture[0].path.replace(/\\/g,"/");
+    const category = req.body.category;
+    const description = req.body.description;
+    const sellStatus = "available";
+    const like = 0;
+    const condition = req.body.condition;
+    const userId = req.body.userId;
+
+    //Create the new product
+    const product = new Products({
+        productName: productName,
+        price: price,
+        productPicture: productPicture,
+        category: category,
+        description: description,
+        sellStatus: sellStatus,
+        like: like,
+        condition: condition,
+        userId: new mongoose.Types.ObjectId(userId)
+    });
+    product
+        .save()
+        .then(product => {
+            return res.status(201).json({
+                message: "Product successfully created!",
+                product: product 
+            });
+        })
+        .catch(err => {
+            return res.status(500).json({
+                message: "Fail to create product",
+                error: err
+            })
+        });
 };
