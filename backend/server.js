@@ -99,5 +99,5 @@ app.use(
 require('./routes/auth')(app)
 require('./routes/userAuth')(app)
 
-app.listen(3000, () => console.log('Server Started'))
+app.listen(3001, () => console.log('Server Started'))
 
