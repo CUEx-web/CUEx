@@ -2,7 +2,7 @@ GET http://localhost:3000/users
 
 ###
 
-GET http://localhost:3000/users/6217c53d4ff436151acda868
+GET http://localhost:3000/users?userName=Jer
 
 ###
 
@@ -52,3 +52,6 @@ GET http://localhost:3000/api/test/user
 
 ###
 GET http://localhost:3000/api/test/admin
+
+###
+GET http://localhost:3000/

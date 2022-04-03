@@ -3,23 +3,22 @@ const user = require("../models/user")
 const router = express.Router()
 const User = require("../models/user")
 
+const userController = require("../controllers/user")
+
 //Get all user
-router.get("/", async (req, res) => {
-    try {
-        const users = await User.find()
-        res.json(users)
-    } catch (err) {
-        res.status(500).json({
-            message: err.message
-        })
-    }
-})
+// router.get("/", async (req, res) => {
+//     try {
+//         const users = await User.find()
+//         res.json(users)
+//     } catch (err) {
+//         res.status(500).json({
+//             message: err.message
+//         })
+//     }
+// })
 
 //Get one user
-router.get("/:id", getUser, (req, res) => {
-    //To do: return one specific user
-    res.json(res.user)
-})
+router.get("/", userController.getUsers)
 
 //Create user
 router.post("/", async (req, res) => {
