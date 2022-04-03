@@ -6,7 +6,6 @@ checkDuplicateUsernameOrEmail = (req, res, next) => {
         userName: req.body.userName
     }).exec((err, user) => {
         if (err) {
-            console.log("nice day")
             res.status(500).send({ message: err })
             return
         }
