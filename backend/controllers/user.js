@@ -8,7 +8,13 @@ exports.signup = (req, res) => {
     const user = new User({
         userName: req.body.userName,
         email: req.body.email,
-        password: password 
+        password: password,
+        userType: "Normal",
+        studentId: req.body. studentId,
+        rating: 0,
+        profilePicture: null,
+        productId: null,
+        profileDescription: "",
     })
     user.save((err, user) => {
         if (err) {
@@ -50,7 +56,7 @@ exports.signin = (req, res) => {
             id: user._id,
             username: user.userName,
             email: user.email,
-            // roles: authorities,
+            userType: user.userType,
         })
     })
 }

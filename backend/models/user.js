@@ -6,15 +6,15 @@ const Schema = mongoose.Schema;
 const userSchema = new Schema({
     userName: {
         type: String,
-        // required: true
+        required: true
     },
     email: {
         type: String,
-        // required: true
+        required: true
     },
     userType: {
         type: String,
-        // required: true
+        required: true
     },
     studentId: {
         type: String,
@@ -22,11 +22,11 @@ const userSchema = new Schema({
     },
     password: {
         type: String,
-        // required: true
+        required: true
     },
     rating: {
         type: Number,
-        // required: true,
+        required: true,
     },
     profilePicture: {
         type: String,
@@ -38,18 +38,13 @@ const userSchema = new Schema({
             ref: "Product"
         }
     ],
-    loginStatus: {
-        type: Boolean,
-        // required: true,
-        default: false
-    },
     profileDescription: {
         type: String,
-        // required: true,
+        required: true,
     },
     registrationDate: {
         type: Date,
-        // required: true,
+        required: true,
         default: Date.now
     }
 })
