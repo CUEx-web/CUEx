@@ -1,7 +1,7 @@
 import { FilterCenterFocus } from "@material-ui/icons";
 import { ReplayCircleFilled } from "@mui/icons-material";
 import "../ExploreSection.css";
-import bookIcon from "../Images/BookIcon.png"
+import bookIcon from "../images/BookIcon.png"
 import { useState } from "react";
 
 const ExploreSection = () => {

@@ -1,5 +1,5 @@
 import "../App.css";
-import CUExLogo from "../Images/WebsiteLogo.JPG"
+import CUExLogo from "../images/WebsiteLogo.JPG"
 import SearchIcon from '@mui/icons-material/Search';
 
 const Navbar = () => {

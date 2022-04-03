@@ -9,21 +9,7 @@ const productController = require("../controllers/product")
 router.get('/', productController.getProducts);
 
 // Create product
-router.post('/', async(req, res) => {
-    const product = new Product({
-        //To do: generate userId
-        productId: "1",
-        productName: req.body.productName
-    })
-    try {
-        const newProduct = await product.save()
-        res.status(201).json(newProduct)
-    } catch (err) {
-        res.status(400).json({
-            message: err.message
-        })
-    }
-});
+router.post('/', productController.postProduct);
 
 // Update product
 router.put('/:id', (req, res) => {
