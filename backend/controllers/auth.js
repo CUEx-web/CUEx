@@ -5,6 +5,15 @@ var bcrypt = require("bcryptjs")
 
 exports.signup = (req, res) => {
     const password = bcrypt.hashSync(req.body.password, 8)
+    //Store in server images dir
+    console.log(req.files)
+    if (req.files.profilePicture.length < 1) {
+        return res.status(500).json({
+            message: "Failed to create user.",
+            error: "Error with image upload."
+        })
+    }
+    const profilePicture = req.files.profilePicture[0].path.replace(/\\/g,"/")
     const user = new User({
         userName: req.body.userName,
         email: req.body.email,
@@ -12,7 +21,7 @@ exports.signup = (req, res) => {
         userType: "Normal",
         studentId: req.body. studentId,
         rating: 0,
-        profilePicture: " ",
+        profilePicture: profilePicture,
         productId: [],
         profileDescription: " ",
     })

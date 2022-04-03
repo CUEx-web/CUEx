@@ -22,7 +22,8 @@ db.once("open", () => console.log("Connected to Database"))
 const fileStorage = multer.diskStorage({
   destination: function(req, file, cb) {
       //Store in images dir
-      if (req.body.event == 'users') {
+      console.log(req.body)
+      if (req.body.event == "users") {
         //Store inside users under images dir
         cb(null, "images/users"); 
       } else {

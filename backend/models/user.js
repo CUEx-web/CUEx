@@ -30,7 +30,7 @@ const userSchema = new Schema({
     },
     profilePicture: {
         type: String,
-        // required: true,
+        required: true,
     },
     productId: [
         {
