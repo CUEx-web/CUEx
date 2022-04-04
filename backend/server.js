@@ -22,7 +22,6 @@ db.once("open", () => console.log("Connected to Database"))
 const fileStorage = multer.diskStorage({
   destination: function(req, file, cb) {
       //Store in images dir
-      console.log(req.body)
       if (req.body.event == "users") {
         //Store inside users under images dir
         cb(null, "images/users"); 
@@ -99,5 +98,5 @@ app.use(
 require('./routes/auth')(app)
 require('./routes/userAuth')(app)
 
-app.listen(3000, () => console.log('Server Started'))
+app.listen(3001, () => console.log('Server Started'))
 

@@ -30,7 +30,7 @@ exports.signup = (req, res) => {
             res.status(500).send({ message: err })
             return
         }
-        res.send({ message: "User was registered successfully!" })
+        res.status(201).send({ message: "User was registered successfully!" })
     })
 }
 exports.signin = (req, res) => {
@@ -61,7 +61,7 @@ exports.signin = (req, res) => {
         req.session.token = token
         res.status(200).send({
             id: user._id,
-            username: user.userName,
+            userName: user.userName,
             email: user.email,
             userType: user.userType,
         })
@@ -82,10 +82,7 @@ exports.allAccess = (req, res) => {
 }
 exports.userBoard = (req, res) => {
     res.status(200).send("User Content.");
-  };
-  exports.adminBoard = (req, res) => {
+}
+exports.adminBoard = (req, res) => {
     res.status(200).send("Admin Content.");
-  };
-  exports.moderatorBoard = (req, res) => {
-    res.status(200).send("Moderator Content.");
-  };
+}
