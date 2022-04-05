@@ -13,7 +13,7 @@ exports.getUsers = async (req, res) => {
             })
             .catch(err => {
                 console.log(err)
-                return res.status(500).json({ message: err.message });
+                return res.status(500).json({ message: err.message })
             })
     }
     if (req.query.userId) {
@@ -26,7 +26,20 @@ exports.getUsers = async (req, res) => {
             })
             .catch(err => {
                 console.log(err)
-                return res.status(500).json({ message: err.message });
+                return res.status(500).json({ message: err.message })
+            })
+    }
+    if (req.query.studentId) {
+        // Return user with their studentId matching req.query.studentId
+        Users.find({ "studentId": req.query.studentId })
+            .populate("studentId", "_id productName")
+            .then(user => {
+                console.log(user)
+                return res.status(200).json(user)
+            })
+            .catch(err => {
+                console.log(err)
+                return res.status(500).json({ message: err.message })
             })
     }
     if (Object.keys(req.query).length == 0) {
