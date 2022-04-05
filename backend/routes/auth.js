@@ -11,4 +11,5 @@ module.exports = function(app) {
     app.post("/api/auth/signup", verifySignUp.checkDuplicateUsernameOrEmail, authController.signup)
     app.post("/api/auth/signin", authController.signin)
     app.post("/api/auth/signout", authController.signout)
+    app.get("/api/auth/confirm/:confirmationCode", authController.verifyUser)
 }

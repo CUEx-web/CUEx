@@ -1,3 +1,5 @@
 module.exports = {
-    secret: "CUEx-secret-key"
+    secret: "CUEx-secret-key",
+    user: "cuexweb@gmail.com",
+    pass: "cuexcsci3100"
 }

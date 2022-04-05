@@ -14,6 +14,7 @@ const userSchema = new Schema({
     },
     userType: {
         type: String,
+        default: "Normal",
         required: true
     },
     studentId: {
@@ -23,6 +24,15 @@ const userSchema = new Schema({
     password: {
         type: String,
         required: true
+    },
+    status: {
+        type: String,
+        enum: ["Pending", "Active"],
+        default: "Pending"
+    },
+    confirmationCode: {
+        type: String,
+        unique: true
     },
     rating: {
         type: Number,

@@ -1,10 +1,12 @@
 const config = require("../config/authConfig")
+const nodemailer = require("./mailer")
 const User = require("../models/user")
 var jwt = require("jsonwebtoken")
 var bcrypt = require("bcryptjs")
 
 exports.signup = (req, res) => {
     const password = bcrypt.hashSync(req.body.password, 8)
+    const token = jwt.sign({ email: req.body.email }, config.secret)
     //Store in server images dir
     console.log(req.files)
     if (req.files.profilePicture.length < 1) {
@@ -18,21 +20,50 @@ exports.signup = (req, res) => {
         userName: req.body.userName,
         email: req.body.email,
         password: password,
-        userType: "Normal",
+        confirmationCode: token,
         studentId: req.body. studentId,
         rating: 0,
         profilePicture: profilePicture,
         productId: [],
         profileDescription: " ",
     })
-    user.save((err, user) => {
+    user.save((err) => {
         if (err) {
             res.status(500).send({ message: err })
             return
         }
-        res.status(201).send({ message: "User was registered successfully!" })
+        res.status(201).send({ message: "User was registered successfully! Please check your email." })
+
+        nodemailer.sendConfirmationEmail(
+            user.username,
+            user.email,
+            user.confirmationCode
+        )
     })
 }
+
+exports.verifyUser = (req, res, next) => {
+    User.findOne({
+      confirmationCode: req.params.confirmationCode
+    })
+    .exec((err, user) => {
+        if (err){
+            return res.status(500).send({ message: err })
+        }
+        if (!user){
+        return res.status(404).send({ message: "User Not found." })
+        }
+
+        user.status = "Active";
+        user.save((err) => {
+            if (err){
+                res.status(500).send({ message: err })
+                return;
+            }
+        })
+    })
+};
+
 exports.signin = (req, res) => {
     User.findOne({
         userName: req.body.userName
@@ -45,13 +76,15 @@ exports.signin = (req, res) => {
         if (!user) {
             return res.status(404).send({ message: "User not found."})
         }
-        console.log(user)
         var passwordIsValid = bcrypt.compareSync(
             req.body.password,
             user.password
         )
         if (!passwordIsValid) {
             return res.status(401).send({ message: "Invalid password."})
+        }
+        if (user.status != "Active") {
+            return res.status(401).send({ message: "Pending Account. Please Verify Your Email!" })
         }
         var token = jwt.sign({ id: user.id }, config.secret, {
             expiresIn: 86400
