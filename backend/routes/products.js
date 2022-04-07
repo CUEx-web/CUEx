@@ -3,32 +3,31 @@ const product = require("../models/product")
 const router = express.Router()
 const Product = require("../models/product")
 
+const { authJwt } = require("../middlewares")
+
 const productController = require("../controllers/product")
+
+// const middlewareConfig = function(req, res, next) {
+//     res.header(
+//         "Access-Control-Allow-Headers",
+//         "Origin, Content-Type, Accept"
+//     )
+//     next()
+// }
+
+//Get product by productId
+router.get('/:productId', productController.getProductById);
 
 //Get all products or products by productName, category
 router.get('/', productController.getProducts);
 
 // Create product
-router.post('/', productController.postProduct);
+router.post('/', authJwt.verifyToken, productController.postProduct);
 
 // Update product
-router.put('/:id', (req, res) => {
-    
-});
+router.put('/:productId', authJwt.verifyToken, productController.updateProduct);
 
 // Delete product
-router.delete('/:id', async(req, res) => {
-    //To do: delete product with specific productId
-    try {
-        await res.product.remove()
-        res.json({
-            message: "Delete product:" + product.ProductName
-        })
-    } catch (err) {
-        res.status(500).json({
-            message: err.message
-        })
-    }
-});
+router.delete('/:productId', authJwt.verifyToken, productController.deleteProduct);
 
 module.exports = router

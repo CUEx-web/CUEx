@@ -61,18 +61,9 @@ app.use('/images/products', express.static(path.join(__dirname, 'images/products
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
+  res.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, Accept, Authorization");
   next();
 })
-
-// Import Controller
-const errorController = require("./controllers/error")
-
-const usersRouter = require("./routes/users")
-app.use("/users", usersRouter)
-
-const productsRouter = require("./routes/products")
-app.use("/products", productsRouter)
 
 // const transactionsRouter = require("./routes/transactions")
 // app.use("/transactions", transactionsRouter)
@@ -94,6 +85,15 @@ app.use(
         httpOnly: true
     })
 )
+
+// Import Controller
+const errorController = require("./controllers/error")
+
+const usersRouter = require("./routes/users")
+app.use("/users", usersRouter)
+
+const productsRouter = require("./routes/products")
+app.use("/products", productsRouter)
 
 require('./routes/auth')(app)
 require('./routes/userAuth')(app)
