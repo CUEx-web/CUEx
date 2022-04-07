@@ -5,7 +5,7 @@ exports.getProducts = async (req, res) => {
     console.log(req.query)
     if (req.query.productName) {
         //Return all products which their productName equals to the req.body.productName
-        Products.find( { "productName": req.query.productName, "sellStatus": "available" } )
+        Products.find( { "productName": {$regex: req.query.productName, $options: 'i'}, "sellStatus": "available" } )
             .populate("userId", "_id userName")
             .then(products => {
                 console.log(products);
