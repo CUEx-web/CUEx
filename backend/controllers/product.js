@@ -36,6 +36,20 @@ exports.getProducts = async (req, res) => {
                 res.status(500).json({ message: err.message });
             });
     }
+    if (req.query.userId) {
+        const userId = req.query.userId;
+        //"_id productName price productPicture category description sellStatus like postDate condition "
+        Users.findById(userId)
+            .populate("productId", "_id productName price productPicture category description sellStatus like postDate condition paymentType")
+            .then(products => {
+                console.log(products);
+                return res.status(200).json(products)
+            })
+            .catch(err => {
+                console.log(err);
+                res.status(500).json({ message: err.message });
+            });
+    }
     if (Object.keys(req.query).length == 0) {
         //Empty query parameters means to return all products
         Products.find( { "sellStatus": "available" } )
@@ -49,7 +63,7 @@ exports.getProducts = async (req, res) => {
                 console.log(err);
                 return res.status(500).json({ message: err.message });
             });
-    } else if ((!req.query.category) && (!req.query.productName)) {
+    } else if ((!req.query.category) && (!req.query.productName) && (!req.query.userId)) {
         //Return Error if wrong query is done
         return res.status(500).json({ message: "Call wrong api / Wrong query parameter" });
     }
