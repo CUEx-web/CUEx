@@ -164,18 +164,20 @@ exports.updateProduct = async (req, res) => {
     const condition = req.body.condition;
     const paymentType = req.body.paymentType;
     let productPicture = "";
-    console.log(req.body);
+    //console.log(req.body);
+    //console.log(req.body.productPicture)
+    console.log(req.files.length)
+    console.log(req.files)
+    //console.log(req.files)
     //If update productImage, but fail to parse
-    if (req.files.productPicture.length < 1) {
-        return res.status(500).json({
-            message:  "Fail to update product",
-            error: "The image is incorrect or missing!"
-        })
+    if (Object.entries(req.files).length === 0) {
+        console.log("Enter No Change Image Path")
     }
     //Replace \ with /
-    if (req.files.productPicture.length > 0) {
+    if (!(Object.entries(req.files).length === 0) && (req.files.productPicture.length > 0)) {
         //Repalce with updated photo
         productPicture = req.files.productPicture[0].path.replace(/\\/g,"/");
+        console.log("Enter Change Image Path")
     }
     Products.findById(productId)
         .then(product => {
@@ -192,9 +194,11 @@ exports.updateProduct = async (req, res) => {
                     message: "You are not the product owner! Please login first"
                 })
             }
-            if (product.productPicture != productPicture) {
+            if (productPicture != "") {
                 //If new one not equal old one, delete the old image
                 deleteImage(product.productPicture);
+            } else {
+                productPicture = product.productPicture
             }
             //Update all info
             product.productName = productName;
@@ -206,6 +210,7 @@ exports.updateProduct = async (req, res) => {
             product.condition = condition;
             product.paymentType = paymentType;
             product.productPicture = productPicture;
+            console.log("OK Delete")
             return product.save();
         })
         .then(updatedProduct => {
