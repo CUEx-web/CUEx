@@ -34,10 +34,10 @@ const userSchema = new Schema({
         type: String,
         unique: true
     },
-    rating: {
-        type: Number,
-        required: true,
-    },
+    // grade: {
+    //     type: String,
+    //     required: true
+    // },
     profilePicture: {
         type: String,
         required: true,
