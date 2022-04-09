@@ -1,5 +1,6 @@
 const Users = require("../models/user")
 const mongoose = require('mongoose');
+var bcrypt = require("bcryptjs")
 
 //For delete image in server
 const fs = require('fs');
@@ -94,7 +95,6 @@ exports.updateUser = async (req, res) => {
     //Get userId from parms
     const userId = req.params.userId;
     Users.findById(userId).then(user => {
-        console.log(user)
         //Frontend will give all info; changeable attributes distinguished by "req.body.*"
         const userName = user.userName;
         const email = req.body.email;
@@ -163,7 +163,6 @@ exports.updateUser = async (req, res) => {
                 });
             })
             .catch(err => {
-                console.log(err)
                 return res.status(500).json({
                     message: "Fail to delete user",
                     error: err
@@ -212,4 +211,65 @@ exports.deleteUser = async (req, res) => {
                 error: err
             })
         })
+}
+
+exports.forgetPassword = (req, res) => {
+    Users.findOne({ "userName": req.body.userName })
+        .then(user => {
+            console.log(user)
+            const userName = user.userName;
+            console.log(userName)
+            const email = user.email;
+            const userType = user.userType;
+            const studentId = user.studentId;
+            const stat = user.status;
+            const confirmationCode = user.confirmationCode;
+            const registrationDate = user.registrationDate;
+            let password = "";
+            const productId = user.productId;
+            const grade = user.grade;
+            const profileDescription = user.profileDescription;
+            const profilePicture = user.profilePicture;
+
+        if (req.body.newPassword == req.body.confirmPassword) {
+            password = bcrypt.hashSync(req.body.newPassword, 8)
+            Users.findById(user._id)
+                .then(users => {
+                    console.log(userName)
+                    users.userName = userName;
+                    users.email = email;
+                    Users.userType = userType;
+                    users.studentId = studentId;
+                    users.status = stat;
+                    users.confirmationCode = confirmationCode;
+                    users.registrationDate = registrationDate;
+                    users.password = password;
+                    users.productId = productId;
+                    users.grade = grade;
+                    users.profileDescription = profileDescription;
+                    users.profilePicture = profilePicture;
+                    console.log(users)
+                    return users.save()
+                })
+                .then(updatedUser => {
+                    return res.status(200).json({
+                        message: "User Updated!",
+                        user: updatedUser
+                    })
+                })
+                .catch(err => {
+                    console.log(err)
+                    return res.status(500).json({
+                        message: "Fail to delete user",
+                        error: err
+                    })
+                })
+            }
+            else {
+                return res.json({
+                    message: "Passwords do not match! Please try again."
+                })
+            }
+        })
+
 }

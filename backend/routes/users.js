@@ -16,4 +16,6 @@ router.put('/:userId', authJwt.verifyToken, userController.updateUser)
 //Delete user
 router.delete("/:userId", authJwt.verifyToken, userController.deleteUser)
 
+router.put("/api/forget", userController.forgetPassword)
+
 module.exports = router
