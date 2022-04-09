@@ -254,7 +254,6 @@ exports.forgetPassword = (req, res) => {
                 .then(updatedUser => {
                     return res.status(200).json({
                         message: "User Updated!",
-                        user: updatedUser
                     })
                 })
                 .catch(err => {
