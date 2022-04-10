@@ -59,9 +59,10 @@ app.use('/images/products', express.static(path.join(__dirname, 'images/products
 
 //Avoid CORS Errors
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Origin", "http://localhost:3000");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, PATCH, DELETE");
   res.setHeader("Access-Control-Allow-Headers", "Origin, Content-Type, Accept, Authorization");
+  res.setHeader("Access-Control-Allow-Credentials", true);
   next();
 })
 
@@ -75,7 +76,7 @@ app.use((req, res, next) => {
 // app.use(errorController.get404)
 
 // Allow cross-origin resource sharing
-app.use(cors())
+//app.use(cors())
 // set user session data within cookie
 app.use(
     cookieSession({
