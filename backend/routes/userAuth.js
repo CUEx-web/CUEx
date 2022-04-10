@@ -17,7 +17,7 @@ module.exports = function(app) {
         [authJwt.verifyToken, authJwt.isAdmin],
         authController.adminBoard
     )
-    app.get("/api/test/user", [authJwt.verifyToken], (req, res) => {
+    app.get("/api/loggedinuser", [authJwt.verifyToken], (req, res) => {
         console.log(req.userId)
         User.findById(req.userId)
         .populate("productId", "_id productName")
