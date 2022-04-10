@@ -11,7 +11,7 @@ exports.getProducts = async (req, res) => {
     if (req.query.productName) {
         //Return all products which their productName contains the req.body.productName
         Products.find( { "productName": {$regex: req.query.productName, $options: 'i'}, "sellStatus": "available" } )
-            .populate("userId", "_id userName")
+            .populate("userId", "_id userName profilePicture")
             .then(products => {
                 console.log(products);
                 //Return 200 and products if success get
@@ -25,7 +25,7 @@ exports.getProducts = async (req, res) => {
     if (req.query.category) {
         const category = JSON.parse(req.query.category);
         Products.find( { "category": { $in: category }, "sellStatus": "available"  } )
-            .populate("userId", "_id userName")
+            .populate("userId", "_id userName profilePicture")
             .then(products => {
                 console.log(products);
                 //Return 200 and products if success get               
@@ -53,7 +53,7 @@ exports.getProducts = async (req, res) => {
     if (Object.keys(req.query).length == 0) {
         //Empty query parameters means to return all products
         Products.find( { "sellStatus": "available" } )
-            .populate("userId", "_id userName")
+            .populate("userId", "_id userName profilePicture")
             .then(products => {
                 console.log(products);
                 //Return 200 and products if success get
@@ -73,7 +73,7 @@ exports.getProductById = async (req, res) => {
     console.log(req.params)
     const productId = req.params.productId;
     Products.findById(productId)
-    .populate("userId", "_id userName")
+    .populate("userId", "_id userName profilePicture")
     .then(products => {
         console.log(products);
         //Return 200 and products if success get
