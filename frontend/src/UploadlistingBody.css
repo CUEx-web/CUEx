@@ -1,0 +1,81 @@
+.Upload_Page{
+    background-color:	#FFDEAD;
+    margin-left: 20px;
+    display: flex;
+    justify-content: center;
+    margin-left: 100px;
+    margin-right: 100px;
+    padding-right: 70px;
+    position: relative;
+    padding-bottom: 25px;
+    min-height: auto;
+}
+
+.Upload_Heading{
+    margin-left: 20px;
+    padding-top: 130px;
+    text-align: center;
+}
+.file_selector{
+    height:40px;
+}
+.imagecontainer{
+    background-color: grey;
+    height:10%;
+    width: 20%;
+}
+.form{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: left;
+    margin-top: 20px;
+}
+.Uploadimagebutton{
+    margin-left:75px;
+}
+.imagecontainer{
+margin-top:10px;
+margin-left:200px;
+margin-bottom: 10px;
+font-family: 'Courier New', Courier, monospace;
+}
+.productname{
+    margin-left: 75px;
+}
+.category{
+  
+    margin-top:20px;
+    margin-bottom: 10px;
+}
+.category_selector{
+    margin-left:115px;
+}
+.Condition{
+    margin-top:20px;
+    margin-bottom: 10px;
+}
+.condition_selector{
+    margin-left:105px;
+    
+}
+.payment_selector{
+    margin-left: 75px;
+}
+.textarea{
+    margin-left: 10px;
+    height: 150px;
+    width:300px;
+}
+.Price{
+    margin-left:20px;
+    margin-top:40px
+}
+.submit{
+    background-color: #f1356d;
+    color:#fff;
+    padding:8px;
+    cursor: pointer;
+    margin-left: 300px;
+    margin-top:15px;
+    position: relative;
+    right: 50px;
+}

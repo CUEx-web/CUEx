@@ -1,0 +1,139 @@
+.RegisterNewUserBox *{
+    box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+       font-weight: 300;
+     }
+
+/* body {
+    color: white;
+    font-weight: 300;
+
+    background: white;
+    width: 100%;
+    height: 100%;
+  } */
+
+.Regform {
+  
+    margin: 0% auto;
+    text-align: center;
+    background-color: #50a3a2;
+
+  
+  }
+  
+  .Registerinput {
+    border: 1px solid rgba(252, 252, 252, 0.4);
+    background-color: rgba(252, 252, 252, 0.2);
+    width: 250px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    border-radius: 3px;
+    padding: 10px 15px;
+    margin: 0 auto 10px auto;
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    font-weight: 300;
+  }
+  
+.header{
+    padding-left: 0px;
+    padding-top: 30px;
+    margin: 0px 0px 20px 0;
+    color:Yellow;
+    font-style: oblique;
+    background-color: #50a3a2;
+
+
+}  
+  
+.success{
+    font-style: italic;
+    color: black;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #50a3a2;
+
+}
+
+.error{
+    font-style: italic;
+    color: Red;
+    padding-bottom: 20px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #50a3a2;
+
+
+
+}
+
+
+  .RegisterReset {
+    appearance: none;
+    outline: 0;
+    background-color: white;
+    border: 0;
+    display:inline-block;
+    padding-left: 0px;
+    padding-bottom: 20px;
+    padding: 10px 15px;
+    color: #50a3a2;
+    border-radius: 3px;
+    width: 250px;
+    font-size: 18px;
+    margin: 30px 0px 100px 0px;
+    cursor: pointer;
+  }
+  .RegisterReset:hover{
+    background-color: black;
+  }
+
+  .RegisterSubmit {
+    appearance: none;
+    outline: 0;
+    background-color: white;
+    border: 0;
+    display:inline-block;
+
+    padding: 10px 15px;
+    color: #50a3a2;
+    border-radius: 3px;
+    width: 250px;
+    font-size: 18px;
+    margin: auto auto 0px 10px;
+    cursor: pointer;
+   }
+   .RegisterSubmit:hover{
+     background-color: black;
+   }
+
+.uploadimagebutton{
+  border: 1px solid rgba(252, 252, 252, 0.4);
+  background-color: rgba(252, 252, 252, 0.2);
+  
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border-radius: 3px;
+  padding: 10px 15px;
+  margin: 0 auto 10px auto;
+  display: block;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+  font-weight: 300;
+    font-size: 18px;
+    width: 500px;
+    text-align: center;
+    color:black;
+}
+
+.Description{
+    font-weight: bolder;
+    color:red;
+    margin-left: 0px;
+    background-color: #50a3a2;
+
+}

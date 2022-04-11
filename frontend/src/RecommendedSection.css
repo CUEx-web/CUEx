@@ -15,7 +15,7 @@
 .RecommendedSection .RecommendedSectionContainer {
     margin-left: 100px;
     margin-right: 100px;
-    background-color: green;
+    background-color: white;
 
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;

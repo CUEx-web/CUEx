@@ -188,12 +188,12 @@ exports.updateProduct = async (req, res) => {
                     error: "The product does not exist!"
                 })
             }
-            if (product.userId.toString() != req.userId) {
-                //If userId is not equal, then return 403
-                return res.status(403).json({
-                    message: "You are not the product owner! Please login first"
-                })
-            }
+            // if (product.userId.toString() != req.userId) {
+            //     //If userId is not equal, then return 403
+            //     return res.status(403).json({
+            //         message: "You are not the product owner! Please login first"
+            //     })
+            // }
             if (productPicture != "") {
                 //If new one not equal old one, delete the old image
                 deleteImage(product.productPicture);
@@ -237,11 +237,11 @@ exports.deleteProduct = async (req, res) => {
                     message: "Fail to find the product"
                 })
             }
-            if (product.userId.toString() != req.userId) {
-                return res.status(403).json({
-                    message: "You are not the product owner! Please login first"
-                })
-            }
+            // if (product.userId.toString() != req.userId) {
+            //     return res.status(403).json({
+            //         message: "You are not the product owner! Please login first"
+            //     })
+            // }
             //Delete the product image in server
             deleteImage(product.productPicture);
             //Delete product info in mongoDB

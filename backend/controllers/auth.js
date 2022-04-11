@@ -36,7 +36,7 @@ exports.signup = (req, res) => {
         res.status(201).send({ message: "User was registered successfully! Please check your email." })
 
         nodemailer.sendConfirmationEmail(
-            user.username,
+            user.userName,
             user.email,
             user.confirmationCode
         )
@@ -61,6 +61,7 @@ exports.verifyUser = (req, res, next) => {
                 res.status(500).send({ message: err })
                 return;
             }
+            res.status(301).redirect("http://localhost:3000/loginPage")
         })
     })
 };

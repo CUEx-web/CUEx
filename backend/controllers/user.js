@@ -103,23 +103,21 @@ exports.updateUser = async (req, res) => {
         const status = user.status;
         const confirmationCode = user.confirmationCode;
         const registrationDate = user.registrationDate;
-        const password = req.body.password;
+        let password = bcrypt.hashSync(req.body.password, 8);
         const productId = user.productId;
         const grade = req.body.grade;
         const profileDescription = req.body.profileDescription;
         let profilePicture = "";
         console.log(req.body);
         //If update userImage, but fail to parse
-        if (req.files.profilePicture.length < 1) {
-            return res.status(500).json({
-                message:  "Fail to update user",
-                error: "The image is incorrect or missing!"
-            })
+        if (Object.entries(req.files).length === 0) {
+        console.log("Enter No Change Image Path")
         }
         //Replace \ with /
-        if (req.files.profilePicture.length > 0) {
+        if (!(Object.entries(req.files).length === 0) && (req.files.profilePicture.length > 0)) {
             //Repalce with updated photo
             profilePicture = req.files.profilePicture[0].path.replace(/\\/g,"/");
+            console.log("Enter Change Image Path")
         }
         Users.findById(userId)
             .then(user => {
@@ -130,15 +128,17 @@ exports.updateUser = async (req, res) => {
                         error: "The user does not exist!"
                     })
                 }
-                if (user._id.toString() != req.userId) {
-                    //If userId is not equal, then return 403
-                    return res.status(403).json({
-                        message: "You are not the user! Please login first."
-                    })
-                }
-                if (user.profilePicture != profilePicture) {
+                // if (user._id.toString() != req.userId) {
+                //     //If userId is not equal, then return 403
+                //     return res.status(403).json({
+                //         message: "You are not the user! Please login first."
+                //     })
+                // }
+                if (profilePicture != "") {
                     //If new one not equal old one, delete the old image
                     deleteImage(user.profilePicture);
+                } else {
+                    profilePicture = user.profilePicture
                 }
                 //Update all info
                 user.userName = userName;

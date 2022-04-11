@@ -1,0 +1,114 @@
+.editProfileBox *{
+    box-sizing: border-box;
+       margin: 0;
+       padding: 0;
+       font-weight: 300;
+     }
+   
+     .editheading{
+         font-style: italic;
+         color: Blue;
+         padding-top: 175px;
+     }
+   
+     .paragraph{
+         color: red;
+         padding-bottom: 8px;
+         text-align: center;
+     }
+     
+
+     
+     .editcontainer {
+       margin: 0%;
+       padding: 0px 0;
+       text-align: center;
+       background-color: #50a3a2;
+
+     }
+     
+     .editcontainer h1 {
+       font-size: 40px;
+       font-weight: 200;
+     }
+   
+     .editform{
+         margin:2% auto;
+     }
+     
+     .editinput {
+       border: 1px solid rgba(252, 252, 252, 0.4);
+       background-color: rgba(252, 252, 252, 0.2);
+       width: 250px;
+       border-radius: 5px;
+       font-family: "Source Sans Pro", sans-serif;
+       padding: 10px 15px;
+       margin: 7.5px auto 10px auto;
+       display: block;
+       text-align: center;
+       font-size: 18px;
+       color: white;
+       font-weight: 300;
+      
+     }
+   
+
+     
+    .editReset {
+       appearance: none;
+       outline: 0;
+       background-color: white;
+       border: 0;
+       padding: 10px 15px;
+       color: #50a3a2;
+       border-radius: 3px;
+       width: 250px;
+       font-size: 18px;
+       margin:10px 15px 0 0 ;
+       cursor: pointer;
+     }
+     .editReset:hover{
+       background-color: black;
+     }
+
+     .editSubmit {
+        appearance: none;
+        outline: 0;
+        background-color: white;
+        border: 0;
+        padding: 10px 15px;
+        color: #50a3a2;
+        border-radius: 3px;
+        width: 250px;
+        font-size: 18px;
+        margin:10px 15px 0 0 ;
+        cursor: pointer;
+      }
+      .editSubmit:hover{
+        background-color: black;
+      }
+   
+     .editUpload{
+         color:red;
+         
+     }
+     .edituploadimagebutton{
+      border: 1px solid rgba(252, 252, 252, 0.4);
+      background-color: rgba(252, 252, 252, 0.2);
+      
+      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      border-radius: 3px;
+      padding: 10px 15px;
+      margin: 0 auto 10px auto;
+      display: block;
+      text-align: center;
+      font-size: 18px;
+      color: white;
+      font-weight: 300;
+        font-size: 18px;
+        width: 500px;
+        text-align: center;
+        color:black;
+         width: 500px;
+         text-align: center;
+     }

@@ -1,0 +1,145 @@
+.postpage {
+  background-color: white;
+  height: auto;
+  margin-bottom: 20px;
+  overflow-x: hidden;
+}
+.title {
+  margin-top: 150px;
+  font-size: 70px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.product_body {
+  margin: auto;
+  width: 80%;
+}
+.body_image {
+  border: solid #ffe082;
+  border-width: 5px 5px;
+  background: white;
+  width: 500px;
+  height: 350px;
+  text-align: center;
+  border-radius: 25px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+#product_img{
+  height:300px;
+  size:auto;
+}
+.body_about {
+  
+  border: solid #776ac0;
+  border-width: 5px 5px;
+  background: white;
+  text-align: left;
+  border-radius: 25px;
+  padding-left: 50px;
+  padding-top: 10px;
+  padding-bottom: 20px;
+  margin-top: 15px;
+  font-size: 18px;
+}
+
+.buttonProductPage {
+  background-color: #4caf50; /* Green */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-left: 20px;
+  border-radius: 25px;
+}
+.Edit_Button{
+  margin-left: 800px;
+  background-color: red;
+  visibility: hidden; /*hidden or visible*/
+}
+
+.Delete_Button{
+  visibility: hidden; /*hidden or visible*/
+}
+
+#Edit_Product{
+ background-color: rgb(190, 190, 190);
+ visibility: hidden; /*hidden or visible*/
+ border-radius: 25px;
+ margin-top: 10px;
+ display: none;
+ padding-top: 20px;
+ padding-left: 50px;
+ padding-bottom: 20px;
+ font-family: monospace !important;
+}
+
+
+.Seller {
+  margin: auto;
+  width: 80%;
+  height: 400px;
+}
+.seller_title {
+  margin-top: 20px;
+  color: black;
+  text-align: center;
+}
+.sellerinfo{
+
+    border: solid rgb(101, 228, 186);
+    border-width: 5px 5px;
+    background: white;
+    width:80%;
+    margin:auto;
+    border-radius: 25px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    display: flex;
+}
+.Seller_text{
+    padding-left: 15px;
+    padding-bottom: 5px;
+    width: 300px;
+    flex: 1;
+    margin-right: 20px;
+    font-size: 22px;
+   
+}
+.Seller_icon{
+    height: 500px;
+    width: 300px;
+    margin-right: 60px;
+    flex: 1;
+    
+}
+#user_img{
+  height: 300px;
+  size:auto;
+  border-radius: 100%;
+}
+
+.BoxInside{
+  display: flex;
+  justify-content: center;
+}
+
+.productTitle {
+  font-size: 32px;
+  font-weight: 500;
+}
+
+.priceHeading {
+  font-size: 30px;
+  font-weight: 500;
+}
+
+#ProductDescription{
+  top: 100px;
+}

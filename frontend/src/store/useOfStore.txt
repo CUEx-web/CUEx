@@ -1,1 +1,0 @@
-Store allows us to have a "database" and shares resource between component.

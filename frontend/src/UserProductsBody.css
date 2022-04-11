@@ -1,0 +1,28 @@
+.UserProductHeading {
+    height: 90px;
+    background-color: white;
+    margin-top: 140px;
+    margin-left: 100px;
+    margin-right: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 36px;
+    font-weight: 500;
+}
+
+.UserProductsEditContainer {
+    margin-left: 100px;
+    margin-right: 100px;
+    background-color: white;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 5px;
+    grid-row-gap: 15px;
+    margin-bottom: 30px;
+}
+
+.UserProductsEditContainer .ListingBox {
+    background-color: white;
+}

@@ -1,0 +1,65 @@
+.note {
+    background: #fff;
+    border-radius: 7px;
+    box-shadow: 0 2px 5px #ccc;
+    padding: 10px;
+    height: 430px;
+    width: 200px;
+    margin: -50px 0px 0px 0px;
+    position: fixed;
+    float: left;
+  }
+  .note h1 {
+    font-size: 1.1em;
+    margin-bottom: 1px;
+  }
+  .note p {
+    font-size: 1.1em;
+    margin-bottom: 1px;
+    
+  }
+
+  .DeleteUsers {
+    background-color: #50a3a2;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 150px 0px 0px 1255px;
+    cursor: pointer;
+  }
+
+  .DeleteUsers:hover {
+    background-color: black;
+  }
+
+  .CannotDeleteUsers {
+    background-color: #50a3a2;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 150px 0px 0px 1255px;
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+
+  .CannotDeleteUsers:hover {
+    background-color: black;
+  }
+
+
+  .circle-img {
+    border-radius: 75%;
+    border: 7px solid  #000;
+    width: 150px;
+    height: 150px;
+    margin: 20px 10px;
+}
+
