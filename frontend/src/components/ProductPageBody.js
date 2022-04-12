@@ -3,26 +3,7 @@ import "../ProductBody.css";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 function ProductBody(props) {
-  let urlabc = "http://localhost:3001/users/";
-  let methodabc = "GET";
 
-
-useEffect(()=>{
-  fetch(urlabc, { method: methodabc })
-  .then((res) => {
-    if (res.status !== 200) {
-      //If there is any error, statusCode will not be 200 and will throw error
-      throw new Error("Failed to fetch products.");
-    }
-    //Return response data to the next then block
-    return res.json();
-  })
-  .then((resData) => {
-    //Log the return data in the terminal, Frontend team can update things here
-
-    console.log(resData);
-  })
-},[]) 
   const product=props.product;
   const userid=props.userid;
   const date=props.postDate
