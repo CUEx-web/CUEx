@@ -78,7 +78,7 @@ function ProductBody(props) {
           return res.json();
         })
      alert("Delete Success! Now return to the Home Page")
-     window.location.href = "/"
+     window.location.href = "/homepage"
      }
 
   }
