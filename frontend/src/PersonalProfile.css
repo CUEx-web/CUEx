@@ -87,6 +87,7 @@
   grid-column-gap: 5px;
   grid-row-gap: 15px;
   margin-bottom: 20px;
+  min-height: 450px;
 }
 
 #PersonalProductEdit{

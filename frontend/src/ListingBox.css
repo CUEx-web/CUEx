@@ -5,6 +5,7 @@
 .big-box .ListingBox {
     background-color: white;
     height: 500px;
+    max-width:400px;
     display: flex;
     flex-direction: column;
     text-decoration: none;
@@ -55,7 +56,8 @@
 }
 
 #listingBox_img{
-    height:300px;
+    max-height:300px;
+    max-width: 400px;
     size:auto;
 }
 

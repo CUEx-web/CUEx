@@ -17,7 +17,7 @@ import ActiveAccount from './components/ActiveAccount.js';
 import PersonalProfile from './components/PersonalProfile.js';
 import OtherProfile from './components/OtherProfile.js';
 import EditProfile from './components/EditProfile.js';
-
+import AllUserPage from './components/AllUserPage.js'
 function App() {
   return (
     <Router>
@@ -72,7 +72,9 @@ function App() {
       <Route exact path='/EditProfile' >
         <EditProfile />
       </Route>
-
+      <Route exact path='/AllUserPage'>
+        <AllUserPage />
+      </Route>
 
     </div>
     </Router>

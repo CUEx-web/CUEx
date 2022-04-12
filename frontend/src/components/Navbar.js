@@ -161,7 +161,7 @@ const Navbar = () => {
 
             <div className="rightSide">
                 <div className="buttonsReg">
-                <Link className="rightButtons" id='Admin' to={{pathname:"https://www.google.com/" 
+                <Link className="rightButtons" id='Admin' to={{pathname:"/AllUserPage" 
                        }}>Admin</Link>
                     <Link className="rightButtons" onClick={getUserId()} to={{pathname:"/PersonalProfile", 
                         state:{
