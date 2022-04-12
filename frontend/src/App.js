@@ -24,9 +24,11 @@ function App() {
     <div className="App">
       <Switch>
       <Route exact path='/'>
+        <LoginPage/>
+      </Route>
+      <Route exact path='/homepage'>
         <Homepage />
       </Route>
-
       <Route exact path='/search'>
         <SearchResultPage />
       </Route>

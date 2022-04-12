@@ -177,7 +177,7 @@ const Navbar = () => {
         </div>
 
         <div className="bottomBar">
-            <Link className="websiteNameBox" to={{pathname:"/"}} style={{ textDecoration: 'none', color:'black'}}>
+            <Link className="websiteNameBox" to={{pathname:"/homepage"}} style={{ textDecoration: 'none', color:'black'}}>
                 <img src={CUExLogo} />
                 CUEx
             </Link>

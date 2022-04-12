@@ -50,11 +50,11 @@ const Form = (props) => {
             console.log(JSON.stringify( response));
             if(response.userType === "Normal"){
               <Link to="/"></Link>
-              window.location.href = 'http://localhost:3000/'
+              window.location.href = 'http://localhost:3000/homepage'
             }
             else if(response.userType === "Admin"){
               <Link to="/OtherProfile"></Link>
-               window.location.href = 'http://localhost:3000/'
+               window.location.href = 'http://localhost:3000/homepage'
             }
             else {
               alert("We Can't find your account, please check your username and password or contact us.")

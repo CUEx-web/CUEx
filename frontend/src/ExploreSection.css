@@ -3,7 +3,7 @@
     width: 100%;
     margin: 0;
     padding: 0;
-    height: 250px;
+    height: 270px;
     box-shadow: 0 2px 3px rgb(0 0 0 / 0.1);
     z-index: 0;
 }
@@ -30,7 +30,7 @@
 }
 
 .ExploreSection .exploreBar.move {
-    transform: translateX(-930px);
+    transform: translateX(-1130px);
 }
 
 
@@ -76,7 +76,7 @@
     height: 40px;
     width: 40px;
     bottom: 95px;
-    left: 1450px;
+    left: 1730px;
     z-index: 1;
 }
 

@@ -60,7 +60,7 @@ const UploadlistingBody = () => {
       .catch((error) => console.error("Error:", error))
       .then((response) => console.log("Success:", response));
     alert("Submitted! You can now check your product on the product page!!!");
-   window.location.href = "/"
+   window.location.href = "/homepage"
   };
   return (
     <div className="Upload_Page">
