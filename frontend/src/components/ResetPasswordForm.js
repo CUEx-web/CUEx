@@ -72,8 +72,8 @@ function ResetForm() {
           body:(formdata) // data can be `string` or {object}!
         })
           .then((res) => res.json())
-          .catch((error) => console.error("Error:", error))
-          .then((response) => console.log("Success:", response));
+          .catch((error) => alert("Error !!", error))
+          .then((response) => alert("Success !!", response));
 
       }
       else{

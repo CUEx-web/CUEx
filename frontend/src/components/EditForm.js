@@ -142,8 +142,8 @@ function ResetForm(props) {
           body:(formdata) // data can be `string` or {object}!
         })
           .then((res) => res.json())
-          .catch((error) => console.error("Error:", error))
-          .then((response) => alert("Success", response))
+          .catch((error) => alert("Error !!", error))
+          .then((response) => alert("Success !!", response))
       }
      
       
