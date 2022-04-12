@@ -2,7 +2,7 @@ import "../Navbar.css";
 import CUExLogo from "../Images/WebsiteLogo.JPG"
 import SearchIcon from '@mui/icons-material/Search';
 import { Link, useHistory} from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Navbar = () => {
     const [query, setQuery] = useState();
@@ -64,7 +64,39 @@ const Navbar = () => {
         .catch((error) => console.error("Error:", error))
         .then((response) => console.log("Success:", response));
     }
+  const [CurrentUserType,setCurrentUserType]=useState("")
 
+  /*To check is the current user a admin or the product owner */
+    let url_user = "http://localhost:3001/api/loggedinuser";
+    let method_user = "GET";
+
+    console.log(url_user);
+
+    fetch(url_user, { method: method_user, credentials: 'include' })
+    .then((res) => {
+    if (res.status !== 200) {
+        //If there is any error, statusCode will not be 200 and will throw error
+        throw new Error("Failed to fetch users.");
+    }
+    //Return response data to the next then block
+    return res.json();
+    })
+    //.catch((error) => alert("", error))
+
+    .catch((error) => alert("Error:", error))
+    .then((resData) => {
+    console.log(JSON.stringify(resData));
+    //Log the return data in the terminal, Frontend team can update things here
+
+    // alert(JSON.stringify(resData));
+        const usertype=resData.userType;
+        setCurrentUserType(usertype)
+    })
+    useEffect(function isAdmin() {
+        if (CurrentUserType==="Admin") {
+          document.getElementById("Admin").style.visibility = "visible";
+        }
+      });
   return (
     <div className="navbar">
         <div className="topBar">
@@ -129,6 +161,8 @@ const Navbar = () => {
 
             <div className="rightSide">
                 <div className="buttonsReg">
+                <Link className="rightButtons" id='Admin' to={{pathname:"https://www.google.com/" 
+                       }}>Admin</Link>
                     <Link className="rightButtons" onClick={getUserId()} to={{pathname:"/PersonalProfile", 
                         state:{
                             userIDID: currentUserId
