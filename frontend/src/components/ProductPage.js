@@ -8,15 +8,13 @@ import { useParams } from "react-router-dom";
 
 function ProductPage(props) {
   const { product_id } = useParams();
-  const id = product_id - 1; /*return the array element */
-
   let [product,setProduct]=useState([])
   let[userid,setUserid]=useState({})
   let [postDate,setPostDate]=useState("")
   let url = "http://localhost:3001/products";
   let method = "GET";
 
-  //Second Example, GET products with productName = "Test"
+  //Fetch the Product using the product id 
   const queryParams = "/";
   const queryValue = product_id;
   url = url + queryParams + queryValue;
@@ -39,6 +37,7 @@ function ProductPage(props) {
     
     })
   },[]) 
+    //Finish fetch the Product using the product id 
   return (
     <div className="ProductPage">
       <Navbar />

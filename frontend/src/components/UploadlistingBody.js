@@ -1,11 +1,9 @@
-import React, { Component } from "react";
+import React from "react";
 import "../UploadlistingBody.css";
-import ListingBox from "../components/ListingBox.js";
-import { useState, useEffect } from "react";
-import { Identity } from "@mui/base";
-import { Task } from "@mui/icons-material";
+import { useState } from "react";
 
 const UploadlistingBody = () => {
+  // This is a Image Handler to handle the image file
   const uploadedImage = React.useRef(null);
   const ImageHandler = (e) => {
     const [file] = e.target.files;
@@ -20,6 +18,7 @@ const UploadlistingBody = () => {
       reader.readAsDataURL(file);
     }
   };
+  // By default, the product information are as below
   const [productName, setname] = useState("");
   const [category, setcategory] = useState(1);
   const [condition, setcondition] = useState("New");
@@ -33,7 +32,7 @@ const UploadlistingBody = () => {
   const submitted = (e) => {
     e.preventDefault();
     setdate(Date());
-   
+   //Formdata is used to store the user input
     const formdata= new FormData();
     formdata.append("productName",productName);
     formdata.append("price",price);
