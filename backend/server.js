@@ -1,7 +1,6 @@
 /*
 MODULE: Backend Main
 AUTHOR: Chan King Yu 1155142699@link.cuhk.edu.hk
-CALLING SEQUENCE: 
 VERSION 1: written 25-03-2022
 PURPOSE: This is the main module for backend. We use RESTful API. We will check the incoming URL and handle it with different modules.
 IS COMPOSED OF: Products, User, Authentication

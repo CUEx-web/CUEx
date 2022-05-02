@@ -1,3 +1,18 @@
+/*
+MODULE: Products Main
+AUTHOR: Chan King Yu 1155142699@link.cuhk.edu.hk
+VERSION 1: written 30-03-2022
+PURPOSE: This is the products module. It can update, create, delete, get a product.
+IS COMPOSED OF: getProducts, getProductById, postProduct, updateProduct, deleteProduct
+DATA STRUCTURES: NONE
+ALGORITHM: Any one of the following:
+            1. getProducts: get product(s) by productName / category / userId
+            2. getProductById: it can get a product by productId
+            3. postProduct: it can create a product in mongoDB
+            4. updateProduct: it can update a product with productId
+            5. deleteProduct: it can delete a product with productId
+*/
+
 const Products = require("../models/product");
 const Users = require("../models/user")
 const mongoose = require('mongoose');
