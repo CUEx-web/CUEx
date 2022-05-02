@@ -7,14 +7,6 @@ const { authJwt } = require("../middlewares")
 
 const productController = require("../controllers/product")
 
-// const middlewareConfig = function(req, res, next) {
-//     res.header(
-//         "Access-Control-Allow-Headers",
-//         "Origin, Content-Type, Accept"
-//     )
-//     next()
-// }
-
 //Get product by productId
 router.get('/:productId', productController.getProductById);
 
