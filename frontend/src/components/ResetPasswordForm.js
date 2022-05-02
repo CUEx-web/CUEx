@@ -54,6 +54,12 @@ function ResetForm() {
       if (resData.length === 0){
         alert("Error: Incorrect Username !!");
       }
+      else if (input.password === "" || input.confirmPassword === ""){
+        alert("⚠ Please Enter Password or Confirm Password !!");
+      }
+      else if (input.password !== input.confirmPassword){
+        alert("⚠ Password and Confirm Password Does Not Match !!");
+      }
       else if(resData.length > 0){
         const formdata= new FormData();
         formdata.append("userName", input.username);
