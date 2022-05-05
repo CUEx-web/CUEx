@@ -30,31 +30,31 @@ function ResetForm(props) {
 
      
 
-
+  // Handle the value change for the email.
   function handleNewEmail(event){
     const newEmailValue = event.target.value;
     setInputNewEmail(newEmailValue);
   }
-
+  // Handle the value change for the password.
   function handleNewPassword(event){
     const newPasswordValue = event.target.value;
     setNewPassword(newPasswordValue);
   }
-
+  // Handle the value change for the grade.
   function handleNewGrade(event){
     const newGradeValue = event.target.value;
     setNewGrade(newGradeValue);
 
     
   }
-
+  // Handle the value change for the username.
   function handleCurrentUsername(event){
     const newCurrentUsername = event.target.value;
     setNewCurrentUsername(newCurrentUsername);
 
 
   }
-
+   // Handle the case that the user clicked the "Confirm Changes" button.
    function HandleSubmit(){  
     //alert(JSON.stringify(cookies));
 
@@ -151,7 +151,7 @@ function ResetForm(props) {
 
    } 
   
-
+   // Handle the case that the user clicked the "Reset" button.
   function handleClick(){
     setInputNewEmail("")
     setNewPassword("")

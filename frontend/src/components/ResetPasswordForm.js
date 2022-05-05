@@ -2,19 +2,19 @@
 import React, { useState } from 'react';
  
 function ResetForm() {
- 
+ // Initial the input value of username, password and confirmPassword to be empty.
   const [input, setInput] = useState({
     username: '',
     password: '',
     confirmPassword: ''
   });
- 
+ // Initial the error message for the username, password and confirmPassword to be empty.
   const [error, setError] = useState({
     username: '',
     password: '',
     confirmPassword: ''
   })
- 
+  // Save the input value of the username, password and confirm Password when there is a change.
   const onInputChange = e => {
     const { name, value } = e.target;
     setInput(prev => ({
@@ -23,13 +23,13 @@ function ResetForm() {
     }));
     validateInput(e);
   }
-
+  // Handle the case that the user clicked the "Reset" button and set the value of password, confirmPassword and username to be empty.
   function handleResetReset(){
     input.password("");
     input.confirmPassword("");
     input.username("");
   }
-
+  // Handle the case that the user clicked the "Submit" button and perform corrresponding action according to the user input.
   function handleResetSubmit(){
 
     let url = "http://localhost:3001/users";
@@ -89,7 +89,7 @@ function ResetForm() {
     })
 
   }
- 
+ // Check if the input of the username, password, confirmPassword is empty or not, and check if the value of the password and confirmPassword is the same or not and print the corresponding the error message.
   const validateInput = e => {
     let { name, value } = e.target;
     setError(prev => {

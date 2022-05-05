@@ -1,3 +1,30 @@
+/* Header Comment Block For Product Module
+Module Name: Product 
+Programmer: 	Yuen, Ho Tin, Andrew
+Usage: 		This module is used when we needed to handle the product. 
+Last Update: 	13-04-2022 
+Purpose:		This Built the whole structure of the product, including displaying, 
+uploading, updating, deleting
+Data Structure: A product have Data Structure Below: 
+			{
+productName : String,
+price: Float,
+productPicture : URL,
+category: Integer,
+description :String,
+sellStatus: String,
+like :Integer,
+condition:String,
+paymentType: String,
+userId “string”,
+postDate Date
+			}
+Key Algorithm: When upload/update product, we used a form to store the value of 
+the form. 
+When upload/update product, we used an image handler to handle 
+the image uploaded by the user.
+*/
+
 import React, { useEffect, useState } from "react";
 import Navbar from "./Navbar";
 import ProductPageBody from "./ProductPageBody";

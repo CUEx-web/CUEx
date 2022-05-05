@@ -1,9 +1,39 @@
+/*
+Header Comment Block
+What: Program to allow a new user to regieter a new account.
+Who: Programmer:　Chan Tsun Hin
+Where: The user clicked the "Register Account !" button in the login page.
+When: Version : 13-04-2022
+Why: Purpose: The user needs to have a way to register for a new account if they are a new user with our website.  		   
+Data Structure: A product have Data Structure Below:
+{
+	username : String,
+	studentid: Integer,
+	grade: Integer,
+	email: String,
+	password: String
+} 
+Key Algorithm: When a new user register for a new account, we check their input is empty or not.
+			   If the user input is not empty, except fot the profile picture, we upload the input data to the database and ask the user to go to their registered email account to check for a verification email sent by CUEx to complete the verification and make the account active. Then there will a popup message printed on user screen.
+			   Otherwise, if there are any errors, the system will print a popup message to the user's screen. 
+				 
+*/
+
+
+
+
+
+
+
+
+
+
 import React, { useState , Component} from 'react';
 import "../RegisterNewUser.css";
 import Footer from "./Footer.js";
 import { Link } from "react-router-dom";
 
-
+// Handle the upload of the profile picture
 export default function Form() {
 	const [profilePicture, setprofilePicture] = useState([]);
 
@@ -115,7 +145,7 @@ const handleSubmit = (e) => {
 	
 
 };
-
+// Handle the Clicking of the "Reset" button
 const handleClick = () => {
     setUsername("")
 	setstudentid("")
@@ -194,7 +224,7 @@ return (
 			<p className="Description">Please Upload Your Profile Picture or Leave it Blank to Upload Later.</p> 
 
 		<button className="RegisterReset" onClick={handleClick}>Reset</button>
-		<button className="RegisterSubmit" onClick={handleSubmit} type="submit">Confirm Registeration</button>
+		<button className="RegisterSubmit" onClick={handleSubmit} type="submit">Confirm Registration</button>
 		
 		</form>
 		<Footer />

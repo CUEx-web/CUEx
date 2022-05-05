@@ -5,7 +5,7 @@ import EditForm from "./EditForm.js";
 import "../EditProfile.css";
 
 import { useLocation } from 'react-router-dom';
-
+// Calling the edit form and the generate the layout for the Edit Profile Page.
 function EditProfile(props){
 
   const location = useLocation();

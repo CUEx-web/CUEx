@@ -11,16 +11,18 @@ const Form = (props) => {
   
 	
 
-  
+  // Handle user input for the username and save the username value
   function handleUsername(event) {
     const newValue = event.target.value;
     Inputusername(newValue);
   }
+  // Handle user input for the password and save the password value
   function handlePassword(event) {
     const newValue = event.target.value;
     Inputpassword(newValue);
   }
 
+  // Handle user login and return popup message regarding different cases
   function LoginSubmit(){
     if(ActiveUser === false){
     alert("Welcome !!");

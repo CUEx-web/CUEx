@@ -1,3 +1,32 @@
+/*
+Header Comment Block
+What: Program to allow user to view their personal profile and perform different actions.
+Who: Programmer:　Chan Tsun Hin
+Where: The user clicked the "Profile" button in the Homepage.
+When: Version : 13-04-2022
+Why: Purpose: The user needs to have a page to review their personal information and their selling products. User can further edit their profile and products in this page.  		   
+Data Structure: A product have Data Structure Below:
+{
+  userNameForProfilePage : String,
+	studentId: Integer,
+	grade: Integer,
+	email: String,
+	profileImg: String
+} 
+
+Key Algorithm: Display user perosnal information at the left hand side of the page and products that the user are selling are placed at the center of the page.
+               Allow the user to click the products in the personal profile page, which will redirect the user to the Product Information Page.
+               Allow the user to also click the "Edit Profile" button to be redircted to the Edit Profile Page. 
+               Allow the user to click the "Edit Product" button to be redirected to the Edit Product Page.
+
+
+
+
+
+*/
+
+
+
 import Data from "./Data.js";
 import Note from "./Note.js";
 import PersonalProduct from "./PersonalProduct.js"
@@ -97,6 +126,7 @@ function PersonalProfile(props){
       setCurrentUserId(useridvalue);
       setCurrentUserType(usertype)
   })
+  //check if the user is the admin user or the logged in user.
   useEffect(function isAdmin() {
     if (CurrentUserType==="Admin" || CurrentUserId===userIDID) {
       document.getElementById("PersonalProductEdit").style.visibility = "visible";

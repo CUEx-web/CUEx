@@ -21,7 +21,7 @@ const ProductBoxesToEditForProfile = (props) => {
     const[changeLike, setLike] = useState({
         productLike: listingBoxes.like
     })
-
+    //Handle the clicking of likes
     const likesChange = (p) => {
         if(!isIncreased){
             p.productLike += 1;
