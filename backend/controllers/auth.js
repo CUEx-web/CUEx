@@ -1,3 +1,17 @@
+/*
+MODULE: Auth Main
+AUTHOR: Principe Jericho Bibat 1155144002@link.cuhk.edu.hk
+VERSION 1: written 30-03-2022
+PURPOSE: This is the authentication module. It can create or log in a user. It also activates the user.
+IS COMPOSED OF: signup, verifyUser, signin, signout
+DATA STRUCTURES: NONE
+ALGORITHM: Any one of the following:
+            1. signup: it can create a new user in mongoDB
+            2. verifyUser: it can activate an account and change its status to active.
+            3. signin: it can log in a user and return a session cookie
+            4. signout: it can sign out a user and delete the session cookie
+*/
+
 const config = require("../config/authConfig")
 const nodemailer = require("./mailer")
 const User = require("../models/user")

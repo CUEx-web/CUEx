@@ -2,6 +2,7 @@ const jwt = require("jsonwebtoken")
 const config = require("../config/authConfig.js")
 const User = require("../models/user")
 
+// Checks if session cookie is valid and return the userId associated to it
 verifyToken = (req, res, next) => {
     let token = req.session.token
     if (!token) {
@@ -15,6 +16,7 @@ verifyToken = (req, res, next) => {
         next()
     })
 }
+// Checks if user is an admin
 isAdmin = (req, res, next) => {
     User.findById(req.userId).exec((err, user) => {
         if (err) {

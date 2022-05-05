@@ -1,3 +1,18 @@
+/*
+MODULE: Users Main
+AUTHOR: Principe Jericho Bibat 1155144002@link.cuhk.edu.hk
+VERSION 1: written 30-03-2022
+PURPOSE: This is the users module. It can update, delete, and get a user. It can also reset a user's password.
+IS COMPOSED OF: getUsers, getUserById, updateUser, deleteUser, forgetPassword
+DATA STRUCTURES: NONE
+ALGORITHM: Any one of the following:
+            1. getUsers: get user(s) by userName / studentId / userId
+            2. getUserById: it can get a user by userId
+            3. updateUser: it can update a user with userId
+            4. deleteUser: it can delete a user with userId
+            5. forgetPassword: it can update a user's password with userName
+*/
+
 const Users = require("../models/user")
 const mongoose = require('mongoose');
 var bcrypt = require("bcryptjs")
@@ -128,12 +143,6 @@ exports.updateUser = async (req, res) => {
                         error: "The user does not exist!"
                     })
                 }
-                // if (user._id.toString() != req.userId) {
-                //     //If userId is not equal, then return 403
-                //     return res.status(403).json({
-                //         message: "You are not the user! Please login first."
-                //     })
-                // }
                 if (profilePicture != "") {
                     //If new one not equal old one, delete the old image
                     deleteImage(user.profilePicture);
@@ -192,13 +201,6 @@ exports.deleteUser = async (req, res) => {
             console.log("OK")
             return Users.findByIdAndRemove(userId);
         })
-        // .then(result => {
-        //     return Users.findById(req.userId)
-        // })
-        // .then(user => {
-        //     user.productId.pull(userId);
-        //     return user.save();
-        // })
         .then(result => {
             return res.status(200).json({
                 message: "Deleted user with userId: " + userId

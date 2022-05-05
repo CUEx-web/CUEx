@@ -1,3 +1,14 @@
+/*
+MODULE: mailer Main
+AUTHOR: Principe Jericho Bibat 1155144002@link.cuhk.edu.hk
+VERSION 1: written 30-03-2022
+PURPOSE: This is the mailer module. It is used to email the verification email to the user when signing up.
+IS COMPOSED OF: sendConfirmationEmail
+DATA STRUCTURES: NONE
+ALGORITHM: Any one of the following:
+            1. sendConfirmationEmail: it can send a randomly generated confirmation code to user's email
+*/
+
 const nodemailer = require("nodemailer")
 const config = require("../config/authConfig")
 

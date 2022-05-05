@@ -1,7 +1,8 @@
 const User = require("../models/user")
 
+// Checks if the userName or email already exists during signup 
 checkDuplicateUsernameOrEmail = (req, res, next) => {
-    // Username
+    // check userName for any duplicates in database
     User.findOne({
         userName: req.body.userName
     }).exec((err, user) => {
@@ -13,7 +14,7 @@ checkDuplicateUsernameOrEmail = (req, res, next) => {
             res.status(400).send({ message: "Sorry! Username has already been taken." })
             return
         }
-        // Email
+        // check email for any duplicates in database
         User.findOne({
             email: req.body.email
         }).exec((err, email) => {
