@@ -79,17 +79,6 @@ app.use((req, res, next) => {
   next();
 })
 
-// const transactionsRouter = require("./routes/transactions")
-// app.use("/transactions", transactionsRouter)
-
-// const chatsRouter = require("./routes/chats")
-// app.use("/chats", chatsRouter)
-
-// Return 404 Not Found if no middleware handles that req
-// app.use(errorController.get404)
-
-// Allow cross-origin resource sharing
-//app.use(cors())
 // set user session data within cookie
 app.use(
     cookieSession({
