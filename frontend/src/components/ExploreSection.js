@@ -38,13 +38,14 @@ const ExploreSection = () => {
             Explore
         </div>
 
+        {/* Buttons to move the icons right and left in explore section*/}
         <button className={isMove ? "rightButton disappear" : "rightButton"} onClick={() => barIsMove(!isMove)}><ChevronRightIcon /></button>
 
         <button className={isMove ? "leftButton" : "leftButton disappear"} onClick={() => barIsMove(!isMove)}><ChevronLeftIcon /></button>
 
         <div className="box">
 
-        
+        {/* Explore boxes which will navigate to search page with corresponding tags and queries*/}
         <div className={isMove ? "exploreBar move" : "exploreBar"}>
             <Link className="exploreBox" to={{pathname:"/search", 
             state:{

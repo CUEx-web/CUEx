@@ -3,6 +3,7 @@ import "../Footer.css";
 
 const Footer = () => {
   return (
+    // Footer conatain CUEx information
     <div className='footer-border'>
       <div className='footer'>
         <a href="http://www.google.com">© 2022 CUEx</a>

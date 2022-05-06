@@ -18,7 +18,7 @@ const UserProductsBody = (props) => {
 
     let url = "http://localhost:3001/products";
     let method = "GET";
-  //Second Example, GET products with productName = "Test"
+  //Calling APD to fetch products that match the currently logged in user
     const queryParams = "?userId=";
     const queryValue = userIDID;
     url = url + queryParams + queryValue;
@@ -45,7 +45,7 @@ const UserProductsBody = (props) => {
   
     },[])
     
-
+  //Componet that consists product boxes with users can change the products to "Sold or delete the products
   return (
     <div>
         <div className='UserProductHeading'>{userNameForEditPage}'s Product</div>

@@ -1,3 +1,25 @@
+/*
+Header Comment Block
+What: Boxes to store products fetched from API
+Who: Programmer:　THALANG Ikshahang
+Where: Search page and main page
+When: Version : 13-04-2022
+Why: Purpose: To contain products in boxes for modularity	
+Data Structure: Products
+{
+productName: string
+price: integer
+productPicture: string
+category: integer
+description: string
+sellStatus: string
+like: integer
+condition: string
+paymentType: string
+userId: integer
+postDate: Date
+}
+*/
 import "../ListingBox.css";
 import FavoriteBorderSharpIcon from '@mui/icons-material/FavoriteBorderSharp';
 import { IconButton } from '@mui/material';
@@ -17,20 +39,6 @@ const ListingBox = (props) => {
 
   var productlink = "/product/" + listingBoxes._id;
 
-  // const likesChange = (p) => {
-  //   if(!isIncreased){
-  //       p.productLike += 1;
-  //       setLike({...changeLike, productLike : p.productLike})
-  //       setIncreased(true)
-  //   } else {
-  //       p.productLike = p.productLike;
-  //       setLike({...changeLike, productLike : p.productLike})
-  //       setIncreased(false)
-  //   }
-    
-  //   console.log(p.productLike)
-  //   console.log(changeLike.productLike)
-  // }
 
   const listingBoxesLikesChange = (p) => {
     if(!isIncreased){

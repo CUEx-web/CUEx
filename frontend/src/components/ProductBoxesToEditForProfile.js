@@ -1,3 +1,25 @@
+/*
+Header Comment Block
+What: Edit the products as "Sold" or to delete the product
+Who: Programmer:　THALANG Ikshahang
+Where: Profile
+When: Version : 13-04-2022
+Why: Purpose: To show products owned by the user
+Data Structure: Products
+{
+productName: string
+price: integer
+productPicture: string
+category: integer
+description: string
+sellStatus: string
+like: integer
+condition: string
+paymentType: string
+userId: integer
+postDate: Date
+}
+*/
 import React, { useEffect } from 'react'
 import "../ProductBoxesToEditForProfile.css";
 import FavoriteBorderSharpIcon from '@mui/icons-material/FavoriteBorderSharp';
@@ -21,7 +43,7 @@ const ProductBoxesToEditForProfile = (props) => {
     const[changeLike, setLike] = useState({
         productLike: listingBoxes.like
     })
-    //Handle the clicking of likes
+    //Handler to change the number of like by 1 whenever the like button is pressed
     const likesChange = (p) => {
         if(!isIncreased){
             p.productLike += 1;
@@ -36,7 +58,7 @@ const ProductBoxesToEditForProfile = (props) => {
         console.log(p.productLike)
         console.log(changeLike.productLike)
     }
-
+    //Handler to state sold products as "Sold"
     useEffect(() => {
         console.log('THis is lisiting boxes')
         console.log(listingBoxes)
@@ -54,6 +76,7 @@ const ProductBoxesToEditForProfile = (props) => {
 
     var productlink = "/product/" + listingBoxes._id;
 
+  //Product boxes that are shown in the profile page
   return (
     <Link className="ListingBox_profile" to={{ pathname:productlink}}>
         <div className="container" key={listingBoxes.id}>

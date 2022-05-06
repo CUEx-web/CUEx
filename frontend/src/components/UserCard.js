@@ -1,3 +1,20 @@
+/*
+Header Comment Block
+What: User cards that contain user inforamtion
+Who: Programmer:　THALANG Ikshahang
+Where: All User Page
+When: Version : 13-04-2022
+Why: Purpose: To show all the information of user
+Data Structure: Products
+{
+userName: string
+email: string
+userType: string
+studentId: string
+grade: string
+profilePicture: string
+}
+*/
 import React from 'react'
 import { Link } from 'react-router-dom';
 import "../UserCard.css";

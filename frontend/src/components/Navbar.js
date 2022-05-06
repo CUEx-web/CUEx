@@ -16,6 +16,7 @@ const Navbar = () => {
 
     let history = useHistory();
 
+    // Handler to push the search query to the searchPage
     const handleSubmit = (e) => {
         e.preventDefault()
         history.push({pathname:"/search", 
@@ -24,7 +25,7 @@ const Navbar = () => {
             tag: ''
         }});        
     }
-
+    // Handler to get current logged in userID
     const getUserId = (e) => {
         let url = "http://localhost:3001/api/loggedinuser";
         let method = "GET";
@@ -53,7 +54,7 @@ const Navbar = () => {
             setCurrentUserId(useridvalue);
         })
     }
-
+    // Function to log out
     const logOut = (e) => {
         let url = "http://localhost:3001/api/auth/signout";
 
@@ -167,10 +168,7 @@ const Navbar = () => {
                         state:{
                             userIDID: currentUserId
                     }}}>Profile</Link>
-                    {/* <button className="rightButtons" onClick={() => {getUserId(); history.push({
-                        pathname: "/PersonalProfile",
-                        state:{ userIDID: currentUserId }
-                    })}}>New</button> */}
+                    
                     <Link className="rightButtons" onClick={logOut} to={{pathname:"/loginPage"}}>Log out</Link>
                 </div>
             </div>

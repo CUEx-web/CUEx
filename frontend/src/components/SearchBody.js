@@ -1,3 +1,17 @@
+/*
+Header Comment Block
+What: Program to show the products with matched searched queries
+Who: Programmer:　THALANG Ikshahang
+Where: Search page
+When: Version : 13-04-2022
+Why: Purpose: The user can conveniently search and filter products.   		   
+Data Structure: None
+
+Key Algorithm: Sort products by different criterias
+               Filter products by different conditions
+               Filter products by different deal 
+*/
+
 import React from 'react'
 import "../SearchBody.css"
 import ListingBox from '../components/ListingBox.js';
@@ -16,11 +30,11 @@ const SearchBody = (props) => {
   const[isProductName, setProductName] = useState('');
 
   
-
+  //Changing tag numbers to product tags
   const[isProductTag, setProductTag] = useState('');  
   useEffect(() => {
     setProductName(query);
-    // console.log(tag)
+
     if(tag === ""){
       setProductTag("")
     }
@@ -130,10 +144,10 @@ const SearchBody = (props) => {
       setProductTag("Jobs & services")
     }
   }, [tag, query])
-
+  // Fetching products that matches the API queries (categories and product name)
   let url = "http://localhost:3001/products";
   let method = "GET";
-//Second Example, GET products with productName = "Test"
+
 
   let queryParams = "";
   let queryValue = "";
@@ -146,7 +160,7 @@ const SearchBody = (props) => {
   if(props.query === ''){
     queryParams = "?category="
     queryValue = "[" + tag + "]";
-    // console.log(tag)
+
 
     if(tag == "21"){
       queryValue = "[1,2,3]"
@@ -169,13 +183,11 @@ const SearchBody = (props) => {
   }
 
 
-  // console.log(props.query)
-  // console.log("Fk")
-
   const[originalBoxes, setOriginalBoxes] = useState([]);
 
   const[listingBoxes, setLisitngBoxes] = useState([]);
   url = url + queryParams + queryValue;
+  //Calling the API with the constructed queries (categories and product name)
   useEffect(()=>{
     console.log(url);
     fetch(url, { method: method })
@@ -201,6 +213,7 @@ const SearchBody = (props) => {
 
   const [visible, setVisible] = useState(4);
 
+  //Handler for "View more" button to show 4 more product boxes
   const showMoreListingBoxes = () => {
     setVisible((prevValue) => prevValue + 4 );
   };
@@ -226,7 +239,7 @@ const SearchBody = (props) => {
   const [isRadio, setRadio] = useState(
     sortMost
   );
-
+// Function to sort products by most likes
   const sortingByLikes = () => {
     return listingBoxes.sort((a, b) => {
         if (a.like < b.like) return 1;
@@ -236,7 +249,7 @@ const SearchBody = (props) => {
 
     console.log(listingBoxes)
   }
-
+// Function to sort products by recent dates
   const sortingByDateRecent = () => {
     return listingBoxes.sort((a, b) => {
         if (a.postDate < b.postDate) return 1;
@@ -245,7 +258,7 @@ const SearchBody = (props) => {
     })
     console.log(listingBoxes)
   }
-
+// Function to sort products by lowest to highest price
   const sortingByPriceLow = () => {
     return listingBoxes.sort((a, b) => {
         if (a.price < b.price) return -1;
@@ -254,7 +267,7 @@ const SearchBody = (props) => {
     })
     console.log(listingBoxes)
   }
-
+// Function to sort products by highest to lowest price
   const sortingByPriceHigh = () => {
     return listingBoxes.sort((a, b) => {
         if (a.price < b.price) return 1;
@@ -263,25 +276,7 @@ const SearchBody = (props) => {
     })
     console.log(listingBoxes)
   }
-
-  // useEffect(() =>{
-  //   console.log(isRadio);
-
-  //   let boxes;
-
-  //   if(isRadio.most_popular){
-  //     boxes = sortingByLikes()
-  //   } else if (isRadio.recent){
-  //     boxes = sortingByDateRecent()
-  //   } else if (isRadio.priceLow){
-  //     boxes = sortingByPriceLow()
-  //   } else if (isRadio.priceHigh){
-  //     boxes = sortingByPriceHigh()
-  //   }
-  //   console.log(boxes)
-  //   setLisitngBoxes(boxes)
-  // }, [isRadio])
-
+// Function to enable different modes of the "Sort" button
   const sortBoxes = (p) => {
       let boxes;
   
@@ -298,35 +293,7 @@ const SearchBody = (props) => {
       setLisitngBoxes([...boxes])
   }
 
-  // const FilterItems = (p)=>{
-  //   console.log(isCheck);
-
-  //   const cb = (item, id) => {
-  //     if (!p.new && !p.heavily_used && !p.well_used && !p.monetary) { // <- isCheck.monetary
-  //         return true;
-  //     }
-  //     if(p.new && item.condition === 'New'){
-  //         return true
-  //     }
-  //     if (p.well_used && item.condition === 'Well used'){
-  //         return true
-  //     }
-  //     if (p.heavily_used && item.condition === 'Heavily used'){
-  //         return true
-  //     }
-  //     if (p.monetary && item.exchange === 'Monetary'){
-  //         return true
-  //     }
-      
-  //     return false
-  //   }
-
-  //   const qwert = listingBoxes.filter(cb)
-  //   console.log(qwert)
-  //   console.log("hello")
-  //   setLisitngBoxes(qwert)
-  // }
-  
+  // Function to enable different modes of the "Condition" and "Deal" buttons
   const filterItems = (p) => {
     console.log(isCheck)
     let boxes;
@@ -357,61 +324,7 @@ const SearchBody = (props) => {
     setLisitngBoxes([...boxes])
   }
 
-
-  // useEffect (()=>{
-  //   console.log("Bellow is isCheck")
-  //   console.log(isCheck);
-
-  //   const cb = (item, id) => {
-  //     if (!isCheck.new && !isCheck.heavily_used && !isCheck.well_used) { // <- isCheck.monetary
-  //         return true
-  //     }
-  //     if(isCheck.new && item.condition === 'New'){
-  //         return true
-  //     }
-  //     if (isCheck.well_used && item.condition === 'Well used'){
-  //         return true
-  //     }
-  //     if (isCheck.heavily_used && item.condition === 'Heavily used'){
-  //         return true
-  //     }
-      
-  //     return false
-  //   }
-
-  //   const qwert = listingBoxes.filter(cb)
-  //   console.log(qwert)
-  //   setLisitngBoxes(qwert)
-  // }, [isCheck])
-
-  // useEffect (()=>{
-  //   console.log("Bellow is isCheck")
-  //   console.log(isCheck);
-
-  //   const cb = (item, id) => {
-  //     if (!isCheck.new && !isCheck.heavily_used && !isCheck.well_used) { // <- isCheck.monetary
-  //         return true
-  //     }
-  //     if(isCheck.new && item.condition === 'New'){
-  //         return true
-  //     }
-  //     if (isCheck.well_used && item.condition === 'Well used'){
-  //         return true
-  //     }
-  //     if (isCheck.heavily_used && item.condition === 'Heavily used'){
-  //         return true
-  //     }
-      
-  //     return false
-  //   }
-
-  //   const qwert = listingBoxes.filter(cb)
-  //   console.log(qwert)
-  //   setLisitngBoxes(qwert)
-  // }, [isCheck])
-
-
-
+// Body of the search page container
   return (
     <div className='SearchBody'>
         <div className='Heading'>
@@ -487,9 +400,6 @@ const SearchBody = (props) => {
                 </label>
             </div>
 
-            {/* <button onClick={() => {listIsShown4(!isShown4); listIsShown2(false); listIsShown3(false); listIsShown1(false);}}>
-                Price range
-            </button> */}
             <div className={isShown4 ? "price" : "price disappear"}>
                 <label htmlFor='price-1'>
                     <input type='number' id='price-min'>

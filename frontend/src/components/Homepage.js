@@ -6,6 +6,7 @@ import Footer from './Footer'
 
 const Homepage = () => {
   return (
+    // Homepage for CUEx
     <div>        
         <Navbar /> 
         <ExploreSection />

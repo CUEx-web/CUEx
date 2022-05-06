@@ -10,7 +10,7 @@ const SearchResultPage = () => {
   const location = useLocation();
   const { tag, tag1, tag2, tag3, tag4, query } = location.state;
   console.log(tag);
-
+ // Body for search page
   return (
     <div className='SearchResultPage'>
         <Navbar />

@@ -1,5 +1,5 @@
 import React from "react";
-
+// Note that is used in profile page to show user's information
 function Note(props) {
   return (
     <div className="personalnote">

@@ -33,11 +33,12 @@ const AllUserPageBody = () => {
         <div className='Heading'>
             All Users in CUEx
         </div>
+        {/* Showing all the UserCards */}
         <div className='UserCardSection'>
             {userCards.map(function(item, i){
                 return <UserCard boxes={item} key={i} />;
             })}
-            {/* <UserCard/> */}
+            
         </div>
     </div>
   )

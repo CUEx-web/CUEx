@@ -1,3 +1,26 @@
+/*
+Header Comment Block
+What: Edit the products as "Sold" or to delete the product
+Who: Programmer:　THALANG Ikshahang
+Where: Edit product page
+When: Version : 13-04-2022
+Why: Purpose: To contain products in boxes for modularity	
+Data Structure: Products
+{
+productName: string
+price: integer
+productPicture: string
+category: integer
+description: string
+sellStatus: string
+like: integer
+condition: string
+paymentType: string
+userId: integer
+postDate: Date
+}
+*/
+
 import React, { useEffect } from 'react'
 import "../ProductBoxesToEdit.css";
 import FavoriteBorderSharpIcon from '@mui/icons-material/FavoriteBorderSharp';
@@ -23,7 +46,7 @@ const ProductBoxesToEdit = (props) => {
     const[changeLike, setLike] = useState({
         productLike: listingBoxes.like
     })
-
+    //Handler to change the number of like by 1 whenever the like button is pressed
     const likesChange = (p) => {
         if(!isIncreased){
             p.productLike += 1;
@@ -72,18 +95,14 @@ const ProductBoxesToEdit = (props) => {
       let edit_url = "http://localhost:3001/products/"+listingBoxes._id;
       fetch(edit_url, {
         method: "PUT", credentials: 'include',// or 'PUT'
-        //mode: 'no-cors', //seems no need this
-        // headers: new Headers({
-        //   "Content-Type": "multipart/form-data;"
-        // }),
-        body:(formdata) // data can be `string` or {object}!
+        body:(formdata) 
       })
         .then((res) => res.json())
         .catch((error) => console.error("Error:", error))
         .then((response) => console.log("Success:", response));
         alert("Edited to sold!");
     };
-
+    //Function to call APR to delete the product
     function deleteproduct(){
       const answer=window.confirm("Are you sure to delete?");
       console.log(answer)
@@ -113,7 +132,7 @@ const ProductBoxesToEdit = (props) => {
     }
 
 
-
+//Product boxes that are shown in the edit page of profile page
   return (
     <div className="ListingBox">
         <div className="container" key={listingBoxes.id}>
