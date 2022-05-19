@@ -70,8 +70,15 @@ const Form = (props) => {
   
   return (
     <form className="loginform">
-      <input className="LoginInput" onChange={handleUsername} type="text" placeholder="Username" value={Username} />
-      <input className="LoginInput" onChange={handlePassword} type="password" placeholder="Password" value={Password} />
+
+      <div className="Login_username_box">
+        <input className="LoginInput" onChange={handleUsername} type="text" placeholder=" " value={Username} />
+        <label className="Username_label">username</label>
+      </div>
+      <div className="Login_password_box">
+        <input className="LoginInput" onChange={handlePassword} type="password" placeholder=" " value={Password} />
+        <label className="Username_label">password</label>
+      </div>
     
       <button type="button" className="LoginSubmit" onClick={LoginSubmit}>Login</button>
     </form>

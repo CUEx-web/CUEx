@@ -1,27 +1,25 @@
 .LoginBigBox *{
-    box-sizing: border-box;
-       margin: 0;
-       padding: 0;
-       font-weight: 300;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-weight: 300;
        
-     }
+}
 
-     .Introduction{
-         color: greenyellow;
-         font-size: larger;
-         padding-bottom: 10px;
+.Introduction{
+  color: black;
+  font-weight: 500;
+  font-size: 20px;
+  padding-bottom: 10px;
 
-     }
+}
 
      .WebsiteHeader{
-         display: flex;
-         color: greenyellow;
+         color: black;
          font-weight: bolder;
          font-size: 80px;
-         margin: 0 0px 20px 580px;
          padding-top:50px;
          padding-bottom: 10px;
-         text-indent: 20px;
          text-align: center;
          
      }
@@ -30,6 +28,7 @@
          font-style: italic;
          color: Black;
          padding-top: 175px;
+         font-weight: 500;
      }
    
      .paragraph{
@@ -39,12 +38,11 @@
      }
      
      
-     
      .logincontainer {
        margin: 0%;
        padding: 0px 0;
        text-align: center;
-       background-color: #50a3a2;
+       background-color: white;
 
      }
      
@@ -54,75 +52,133 @@
      }
    
      .loginform{
-         margin:2% auto;
+         margin:2% ;
+         -webkit-appearance: none;
      }
      
      .LoginInput {
+      -webkit-appearance: none;
        border: 1px solid rgba(252, 252, 252, 0.4);
        background-color: rgba(252, 252, 252, 0.2);
-       width: 250px;
+
        border-radius: 5px;
-       font-family: "Source Sans Pro", sans-serif;
        padding: 10px 15px;
-       margin: 7.5px auto 10px auto;
-       display: block;
        text-align: center;
        font-size: 18px;
-       color: white;
        font-weight: 300;
-      
+       border: 1px solid black;
+       z-index: 10;
      }
+
+     .LoginInput:focus{
+      outline: none;
+      border: 1px solid rgb(42, 165, 214);;
+     }
+
+     .Login_username_box{
+       position: relative;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       padding-top: 10px;
+       padding-bottom: 10px;
+       z-index: 10;
+     }
+     .Username_label{
+      color: #575756;
+      text-transform: uppercase;
+      font-size: 14px;
+      letter-spacing: 1.5px;
+      position: absolute;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 1.35rem;
+      left: 0;
+      right: 0;
+      top: 0;
+      cursor: text;
+      z-index: 11;
+      pointer-events: none; 
+      padding: none;
+      width: fit-content;
+      height: fit-content;
+      background-color: white;
+      transition: top 200ms ease-in,
+        left 200ms ease-in,
+        font-size 200ms ease-in;
+     }
+
+     .LoginInput:focus ~ .Username_label,
+     .LoginInput:not(:placeholder-shown).LoginInput:not(:focus) ~ .Username_label{
+       top: -1.3rem;
+       left: -9rem;
+       font-size: 12px;
+     }
+
+     .Login_password_box{
+        position: relative;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       padding-top: 10px;
+       padding-bottom: 10px;
+
+     }
+
      .LoginSubmit {
+      background-color: #41B3A3;
+      color: white;
         appearance: none;
         outline: 0;
-        background-color: white;
         border: 0;
         padding: 10px 15px;
-        color: #50a3a2;
         border-radius: 3px;
         width: 250px;
         font-size: 18px;
         margin:10px 15px 0 15px ;
         cursor: pointer;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       }
       .LoginSubmit:hover{
-        background-color: black;
+        background-color: #41B3A3;
       }
  
 
      
-    .loginforgotpassword {
+.loginforgotpassword {
+        background-color: #41B3A3;
+        color: white;
        appearance: none;
        outline: 0;
-       background-color: white;
        border: 0;
        padding: 10px 15px;
-       color: #50a3a2;
        border-radius: 3px;
        width: 250px;
        font-size: 18px;
        margin:10px 15px 0 0 ;
        cursor: pointer;
+       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
      }
      .loginforgotpassword:hover{
-       background-color: black;
+       background-color: rgb(235, 235, 235);
      }
 
      .register {
+      background-color: #41B3A3;
+      color: white;
         appearance: none;
         outline: 0;
-        background-color: white;
         border: 0;
         padding: 10px 15px;
-        color: #50a3a2;
         border-radius: 3px;
         width: 250px;
         font-size: 18px;
         margin:10px 15px 120px 0 ;
         cursor: pointer;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       }
       .register:hover{
-        background-color: black;
+        background-color: rgb(235, 235, 235);
       }
    
      

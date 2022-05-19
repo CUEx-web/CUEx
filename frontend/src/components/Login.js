@@ -68,28 +68,31 @@ function handleRegister(){
   } else {
     greeting = "Good Night!";
     customStyle.color = "black";
+    customStyle.fontWeight = "500";
   }
 
 
   return (
+  <div>
+        <div className="logincontainer">
+          <div className="WebsiteHeader">
+            CUEx
+          </div>     
+          <div className="Introduction">
+            CUHK Member's Self Trading Platform
+          </div>
+          <h1 className="loginheading" style={customStyle}>
+            {greeting}
+          </h1>
+          <Form  isRegistered={userIsRegistered} />
+          <button type="button" onClick={handlePassword} className="loginforgotpassword"> Forgot Password ?</button>
+          <button type="button" onClick={handleRegister} className="register">Register Account !</button>
+          
+        </div>
 
-    <div className="LoginBigBox">
-      <div className="logincontainer">
-        <div className="WebsiteHeader">
-        <img src={Logo} alt="Logo"></img>
-        <p >CUEx</p>
-        </div>     
-        <p className="Introduction">~ CUHK Member's Self Trading Platform ! ~</p>
-      <h1 className="loginheading" style={customStyle}>
-        {greeting}
-      </h1>
-        <Form  isRegistered={userIsRegistered} />
-        <button type="button" onClick={handlePassword} className="loginforgotpassword"> Forgot Password ?</button>
-        <button type="button" onClick={handleRegister} className="register">Register Account !</button>
-        
-      </div>
-      <Footer />
-    </div>
+    <Footer />
+  </div>
+    
   );
 }
 
