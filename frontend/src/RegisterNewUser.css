@@ -1,51 +1,105 @@
-.RegisterNewUserBox *{
-    box-sizing: border-box;
-       margin: 0;
-       padding: 0;
-       font-weight: 300;
-     }
+.drop-zone {
+  max-width: 200px;
+  height: 200px;
+  padding: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px dashed #41B3A3;
+  cursor: pointer;
+  color: #575756;
+  font-size: 16px;
+  letter-spacing: 1.5px;
+  border-radius: 3px;
+}
 
-/* body {
-    color: white;
-    font-weight: 300;
+.drop-zone--over {
+  border: solid;
+}
 
-    background: white;
-    width: 100%;
-    height: 100%;
-  } */
+.drop-zone-upload-image-button {
+  display: none;
+  max-width: 200px;
+  height: 200px;
+}
 
-.Regform {
-  
-    margin: 0% auto;
-    text-align: center;
-    background-color: #50a3a2;
+.register-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
 
-  
+  .register-layout{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   
-  .Registerinput {
-    border: 1px solid rgba(252, 252, 252, 0.4);
+  .register-input {
+    border: 1px solid black;
     background-color: rgba(252, 252, 252, 0.2);
-    width: 250px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    border-radius: 3px;
-    padding: 10px 15px;
-    margin: 0 auto 10px auto;
+    border-radius: 5px;
+    padding: 10px 10px;
+    margin-left: auto;
+    margin-right: auto;
     display: block;
     text-align: center;
     font-size: 18px;
-    color: white;
-    font-weight: 300;
+    color: black;
+    font-weight: 400;
   }
-  
-.header{
-    padding-left: 0px;
-    padding-top: 30px;
-    margin: 0px 0px 20px 0;
-    color:Yellow;
-    font-style: oblique;
-    background-color: #50a3a2;
 
+  .register-input:focus{
+    outline: none;
+    border: 1px solid rgb(25, 136, 180);
+    box-shadow: rgb(190, 235, 253) 0px 0px 0px 3px;
+   }
+  
+  .register-input-box {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    z-index: 10;
+    max-width: 250px;
+  }
+
+  .register-input-label {
+    color: #575756;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    position: absolute;
+    cursor: text;
+    z-index: 11;
+    pointer-events: none;
+    width: fit-content;
+    height: fit-content;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in, transform 200ms ease-in;
+  }
+
+  .register-input:focus ~ .register-input-label,
+  .register-input:not(:placeholder-shown).register-input:not(:focus) ~ .register-input-label{
+     top: 0;
+     left: 0.7rem;
+     font-size: 12px;
+     transform: translate(0%, 0%);
+  }
+
+.register-header{
+  padding-top: 60px;
+  padding-bottom: 30px;
+  font-size: 36px;
+  color: black;
+  background-color: white;
 
 }  
   
@@ -66,52 +120,57 @@
     margin: 0 auto;
     text-align: center;
     background-color: #50a3a2;
-
-
-
 }
 
 
-  .RegisterReset {
+  .register-reset-button {
     appearance: none;
     outline: 0;
-    background-color: white;
+    background-color: #41B3A3;
     border: 0;
     display:inline-block;
     padding-left: 0px;
     padding-bottom: 20px;
     padding: 10px 15px;
-    color: #50a3a2;
+    color: white;
     border-radius: 3px;
     width: 250px;
     font-size: 18px;
-    margin: 30px 0px 100px 0px;
     cursor: pointer;
+    margin-left: 5px;
+    margin-right: 5px;
   }
-  .RegisterReset:hover{
-    background-color: black;
+  .register-reset-button:hover{
+    background-color: #3aa092;
   }
 
-  .RegisterSubmit {
+  .register-submit-button {
     appearance: none;
     outline: 0;
-    background-color: white;
+    background-color: #41B3A3;
     border: 0;
     display:inline-block;
-
+    padding-left: 0px;
+    padding-bottom: 20px;
     padding: 10px 15px;
-    color: #50a3a2;
+    color: white;
     border-radius: 3px;
     width: 250px;
     font-size: 18px;
-    margin: auto auto 0px 10px;
-    cursor: pointer;
-   }
-   .RegisterSubmit:hover{
-     background-color: black;
-   }
+    margin-left: 5px;
+    margin-right: 5px;
 
-.uploadimagebutton{
+    cursor: pointer;
+  }
+  .register-submit-button:hover{
+    background-color: #3aa092;
+  }
+
+  .register-button-box {
+    min-height: 130px;
+  }
+
+.upload-image-button{
   border: 1px solid rgba(252, 252, 252, 0.4);
   background-color: rgba(252, 252, 252, 0.2);
   

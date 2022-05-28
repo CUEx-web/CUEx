@@ -30,13 +30,6 @@
          padding-top: 175px;
          font-weight: 500;
      }
-   
-     .paragraph{
-         color: red;
-         padding-bottom: 8px;
-         text-align: center;
-     }
-     
      
      .logincontainer {
        margin: 0%;
@@ -62,7 +55,7 @@
        background-color: rgba(252, 252, 252, 0.2);
 
        border-radius: 5px;
-       padding: 10px 15px;
+       padding: 10px 10px;
        text-align: center;
        font-size: 18px;
        font-weight: 300;
@@ -72,7 +65,8 @@
 
      .LoginInput:focus{
       outline: none;
-      border: 1px solid rgb(42, 165, 214);;
+      border: 1px solid rgb(25, 136, 180);
+      box-shadow: rgb(190, 235, 253) 0px 0px 0px 3px;
      }
 
      .Login_username_box{
@@ -140,7 +134,7 @@
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       }
       .LoginSubmit:hover{
-        background-color: #41B3A3;
+        background-color: #3aa092;
       }
  
 
@@ -160,7 +154,7 @@
        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
      }
      .loginforgotpassword:hover{
-       background-color: rgb(235, 235, 235);
+        background-color: #3aa092;
      }
 
      .register {
@@ -178,7 +172,7 @@
         box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
       }
       .register:hover{
-        background-color: rgb(235, 235, 235);
+          background-color: #3aa092;
       }
    
      

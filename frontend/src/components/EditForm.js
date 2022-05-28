@@ -162,14 +162,14 @@ function ResetForm(props) {
   return (
     <form className="editform">
      <input required className="editinput" type="text" onChange={handleCurrentUsername} placeholder="Current Username" value={inputCurrentUsername} />
-      <p className="paragraph">Please Enter Your Current Username .</p>
+      <div className="error-info">Please Enter Your Current Username .</div>
       <input className="editinput" type="text" onChange={handleNewEmail} placeholder="New Email" value={inputNewEmail} />
-      <p className="paragraph">Please Enter Your New Email (Optional)</p>
+      <div className="error-info">Please Enter Your New Email (Optional)</div>
       <input className="editinput" type="number" onChange={handleNewGrade} placeholder="New Grade" value={inputNewGrade} />
-      <p className="paragraph">Please Enter Your New Grade (Optional)</p>
+      <div className="error-info">Please Enter Your New Grade (Optional)</div>
     
       <input className="editinput" type="password" onChange={handleNewPassword} placeholder="New Password" value={inputNewPassword}/>
-      <p className="paragraph">Please Enter Your New Password (Optional)</p>
+      <p className="error-info">Please Enter Your New Password (Optional)</p>
       <label className="editUpload">
           <input
             type="file"

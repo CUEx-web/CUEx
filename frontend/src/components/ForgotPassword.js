@@ -1,21 +1,17 @@
 import React from "react";
 import ResetForm from "./ResetPasswordForm.js";
 import Footer from "./Footer.js";
-
 import "../ForgotPassword.css";
+
 // Calling the Reset Password Form and generate the layout for the Forgot Password Page.
 function ForgotPassword(){
     return (
-      <div className="ForgotPasswordBox">
-        <div className="forgotpasswordcontainer">
-         <h1 className="heading">
-        </h1>
-          <ResetForm  />
-          
-
+      <div>
+        <div className="forgotPasswordContainer">
+          <ResetForm />
         </div>
         <Footer />
-        </div>
+      </div>
       );
 
 }

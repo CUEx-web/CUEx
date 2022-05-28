@@ -184,10 +184,10 @@ const errorMessage = () => {
 };
 
 return (
-	<div className="RegisterNewUserBox">
-		<div className="Regform">
+	<div>
+		<div className="register-layout">
 		<div>
-			<h1 className="header">User Registration</h1>
+			<div className='register-header'> User Registration</div>
 		</div>
 
 		{/* Calling to the methods */}
@@ -196,22 +196,37 @@ return (
 			{successMessage()}
 		</div>
 
-		<form className='RegisterForm'>
+		<form className='register-form'>
 			
-			<input placeholder='Username' required onChange={handleUsername} className="Registerinput"
-			value={username} type="text" />
-
-			<input placeholder="Student ID" required onChange={handlestudentid} className="Registerinput"
-			value={studentid} type="number" />
-
-			<input placeholder="Grade" required onChange={handleGrade} className="Registerinput"
-			value={grade} type="number" />
+			<div className='register-input-box'>
+				<input placeholder=' ' required onChange={handleUsername} className="register-input"
+				value={username} type="text" />
+				<label class="register-input-label">username</label>
+			</div>
 			
-			<input placeholder="Email"   required onChange={handleEmail} className="Registerinput"
-			value={email} type="email" />
+			<div className='register-input-box'>
+				<input placeholder=" " required onChange={handlestudentid} className="register-input"
+				value={studentid} type="number" />
+				<label class="register-input-label">student id</label>
+			</div>
+			
+			<div className='register-input-box'>
+				<input placeholder=" " required onChange={handleGrade} className="register-input"
+				value={grade} type="number" />
+				<label class="register-input-label">grade</label>
+			</div>
+			
+			<div className='register-input-box'>
+				<input placeholder=" " required onChange={handleEmail} className="register-input"
+				value={email} type="email" />
+				<label class="register-input-label">email</label>
+			</div>
 
-			<input placeholder="Password" required onChange={handlePassword} className="Registerinput"
-			value={password} type="password" />
+			<div className='register-input-box'>
+				<input placeholder=" " required onChange={handlePassword} className="register-input"
+				value={password} type="password" />
+				<label class="register-input-label">password</label>
+			</div>
 
 
 			<input
@@ -219,16 +234,28 @@ return (
 				accept="image/*"
 				onChange={ImageHandler}
 				multiple={false}
-				className="uploadimagebutton"
+				className="upload-image-button"
 			/>
-			<p className="Description">Please Upload Your Profile Picture or Leave it Blank to Upload Later.</p> 
 
-		<button className="RegisterReset" onClick={handleClick}>Reset</button>
-		<button className="RegisterSubmit" onClick={handleSubmit} type="submit">Confirm Registration</button>
-		
-		</form>
-		<Footer />
+			<div className='drop-zone'>
+				{/* <span>Drop file here or click to upload</span> */}
+				<input
+				type="file"
+				accept="image/*"
+				onChange={ImageHandler}
+				multiple={false}
+				className="drop-zone-upload-image-button"/>
+			</div>
+			<p className="Description">Please Upload Your Profile Picture or Leave it Blank to Upload Later.</p>
+
+		<div className='register-button-box'>
+			<button className="register-reset-button" onClick={handleClick}>Reset</button>
+			<button className="register-submit-button" onClick={handleSubmit} type="submit">Confirm Registration</button>
 		</div>
+
+		</form>
+		</div>
+		<Footer />
 	</div>
 );
 }

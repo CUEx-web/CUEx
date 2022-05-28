@@ -99,15 +99,15 @@ function ResetForm() {
 
         case "username":
           if (!value) {
-            stateObj[name] = <p className='paragraph'>Please Enter Username.</p>
+            stateObj[name] = <div className='error-info'>Please enter username.</div>
           }
           break;
  
         case "password":
           if (!value) {
-            stateObj[name] = <p className='paragraph'>Please Enter Password.</p>
+            stateObj[name] = <div className='error-info'>Please enter password.</div>
           } else if (input.confirmPassword && value !== input.confirmPassword) {
-            stateObj["confirmPassword"] = <p className='paragraph'>⚠ Password and Confirm Password Does Not Match !!</p>
+            stateObj["confirmPassword"] = <div className='error-info'>⚠ Password and confirm password does not match !!</div>
           } else {
             stateObj["confirmPassword"] = input.confirmPassword ? "" : error.confirmPassword;
           }
@@ -115,9 +115,9 @@ function ResetForm() {
  
         case "confirmPassword":
           if (!value) {
-            stateObj[name] = <p className='paragraph'>Please Enter Confirm Password.</p>
+            stateObj[name] = <div className='error-info'>Please enter confirm password.</div>
           } else if (input.password && value !== input.password) {
-            stateObj[name] = <p className='paragraph'>⚠ Password and Confirm Password Does Not Match !!</p>
+            stateObj[name] = <div className='error-info'>⚠ Password and confirm password does not match !!</div>
           }
           break;
  
@@ -130,42 +130,63 @@ function ResetForm() {
   }
  
   return (
-    <div className='ForgotLayout'>
-    <h1 className='resetheader'>Reset Password</h1>
-      <form>
- 
+    <div className='forgot-password-layout'>
+    <div className='reset-header'>Reset Password</div>
+      <form className='reset-form'>
+
+      <div className='reset-input-box'>
       <input
           type="text"
           name="username"
-          placeholder='Enter Username'
+          placeholder=' '
           value={input.username}
           onChange={onInputChange}
           onBlur={validateInput}
-          className="ResetInput"></input>
+          className="reset-input" 
+          style={{
+            border: error.username && '1px solid #C30000'
+          }}></input>
+          <label className="reset-input-label">username</label>
+        </div>
         {error.username && <span className='err'>{error.username}</span>}
- 
+        
+
+        <div className='reset-input-box'>
         <input
           type="password"
           name="password"
-          placeholder='Enter Password'
+          placeholder=' '
           value={input.password}
           onChange={onInputChange}
           onBlur={validateInput}
-          className="ResetInput"></input>
+          className="reset-input"
+          style={{
+            border: error.password && '1px solid #C30000'
+          }}></input>
+          <label className="reset-input-label">new password</label>
+          </div>
         {error.password && <span className='err'>{error.password}</span>}
- 
+
+        <div className='reset-input-box'>
         <input
           type="password"
           name="confirmPassword"
-          placeholder='Enter Confirm Password'
+          placeholder=' '
           value={input.confirmPassword}
           onChange={onInputChange}
           onBlur={validateInput}
-          className="ResetInput"></input>
+          className="reset-input"
+          style={{
+            border: error.confirmPassword && '1px solid #C30000'
+          }}></input>
+          <label className="reset-input-label">confirm password</label>
+          </div>
         {error.confirmPassword && <span className='err'>{error.confirmPassword}</span>}
-
-        <button className="ResetReset" onClick={handleResetReset}>Reset</button>
-        <button type="button" className='ForgotSubmit' onClick={handleResetSubmit}>Submit</button>
+        
+        <div className='reset-button-box'>
+          <button type="button" className="reset-button" onClick={handleResetReset}>Reset</button>
+          <button type="button" className='forgot-button' onClick={handleResetSubmit}>Submit</button>
+        </div>
       </form>
     </div>
   );

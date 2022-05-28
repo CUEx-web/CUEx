@@ -79,7 +79,7 @@ const Form = (props) => {
         <input className="LoginInput" onChange={handlePassword} type="password" placeholder=" " value={Password} />
         <label className="Username_label">password</label>
       </div>
-    
+      
       <button type="button" className="LoginSubmit" onClick={LoginSubmit}>Login</button>
     </form>
   );
